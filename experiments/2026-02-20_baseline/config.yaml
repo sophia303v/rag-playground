@@ -1,0 +1,17 @@
+timestamp: '2026-02-20T23:09:26.865403'
+python_version: 3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:08)
+  [Clang 20.1.8 ]
+GEMINI_MODEL: gemini-2.0-flash
+EMBEDDING_MODEL: text-embedding-004
+EMBEDDING_BACKEND: sentence-transformers
+SENTENCE_TRANSFORMER_MODEL: all-MiniLM-L12-v2
+GENERATION_BACKEND: ollama
+OLLAMA_MODEL: llama3.1:8b
+OLLAMA_BASE_URL: http://localhost:11434
+CHUNK_SIZE: 512
+CHUNK_OVERLAP: 50
+TOP_K: 3
+COLLECTION_NAME: medical_reports
+EMBEDDING_DIMENSION: 384
+yaml_config_source: null
+cli_overrides: {}

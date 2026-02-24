@@ -9,7 +9,7 @@ class Chunk:
     text: str
     chunk_id: str
     report_uid: str
-    section: str  # 'indication', 'findings', 'impression', or 'full'
+    section: str  # 'indication', 'findings', or 'impression'
     metadata: dict
 
 
@@ -46,22 +46,6 @@ def chunk_by_section(report: MedicalReport) -> list[Chunk]:
                 },
             )
             chunks.append(chunk)
-
-    # Also create a full-text chunk for broader context retrieval
-    if report.full_text.strip():
-        chunks.append(
-            Chunk(
-                text=f"[Report {report.uid}] {report.full_text}",
-                chunk_id=f"{report.uid}_full",
-                report_uid=report.uid,
-                section="full",
-                metadata={
-                    "uid": report.uid,
-                    "section": "full",
-                    "has_images": len(report.image_paths) > 0 or len(report.images) > 0,
-                },
-            )
-        )
 
     return chunks
 

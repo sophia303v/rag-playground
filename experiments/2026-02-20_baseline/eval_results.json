@@ -1,0 +1,1096 @@
+{
+  "run_time_seconds": 797.81,
+  "num_questions": 40,
+  "aggregate_scores": {
+    "context_precision": {
+      "mean": 0.3208,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 40
+    },
+    "context_recall": {
+      "mean": 0.6417,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 40
+    },
+    "faithfulness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "answer_relevancy": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "medical_appropriateness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "citation_accuracy": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "answer_completeness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    }
+  },
+  "scores_by_category": {
+    "comparative": {
+      "context_precision": 0.2167,
+      "context_recall": 0.2333,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    },
+    "diagnostic": {
+      "context_precision": 0.3,
+      "context_recall": 0.8,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    },
+    "factual": {
+      "context_precision": 0.35,
+      "context_recall": 0.8,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    },
+    "procedural": {
+      "context_precision": 0.4333,
+      "context_recall": 0.6667,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    }
+  },
+  "results": [
+    {
+      "question_id": "q01",
+      "question": "What are the findings in report CXR_0001?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or diagnosis.\n\nUnfortunately, I couldn't find any reference to Report CXR_0001 in the provided documents. The retrieved references include reports CXR_0015, CXR_0010, and CXR_0002, but there is no mention of report CXR_0001.\n\nTherefore, without further information or a specific image analysis, I am unable to provide any findings for Report CXR_0001.",
+      "ground_truth": "The heart size is normal. The mediastinum is unremarkable. There is a patchy opacity in the right lower lobe consistent with airspace disease. No pleural effusion. No pneumothorax. The osseous structures are intact.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0010",
+        "CXR_0002"
+      ],
+      "relevant_uids": [
+        "CXR_0001"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q02",
+      "question": "What is the impression for patient CXR_0001?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as a definitive diagnosis or treatment plan. Consultation with a qualified medical professional is recommended for accurate interpretation of radiology reports.\n\nBased on the retrieved references, I found that Report CXR_0001 has an indication of \"Cough and fever for 3 days.\" [Source 2]\n\nUnfortunately, there is no impression provided in Report CXR_0001. However, based on the clinical presentation of cough and fever for 3 days, it is likely that the radiologist's impression would focus on identifying any potential causes or complications related to these symptoms.\n\nWithout further information or imaging findings, I am unable to provide a specific impression for patient CXR_0001. If you have access to the actual report or image, please let me know and I can attempt to provide more detailed analysis.",
+      "ground_truth": "Right lower lobe pneumonia.",
+      "retrieved_uids": [
+        "CXR_0004",
+        "CXR_0001",
+        "CXR_0007"
+      ],
+      "relevant_uids": [
+        "CXR_0001"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q03",
+      "question": "What was the clinical indication for the chest X-ray of patient CXR_0002?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or diagnosis.\n\nUnfortunately, I couldn't find any reference documents related to patient CXR_0002 in the provided references. The retrieved references mention patients with different identifiers (CXR_0003, CXR_0018, and CXR_0004). Therefore, I must conclude that there is no information available on the clinical indication for the chest X-ray of patient CXR_0002.\n\nIf you could provide more context or additional reference documents related to patient CXR_0002, I would be happy to assist further.",
+      "ground_truth": "Shortness of breath, rule out CHF.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0018",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0002"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q04",
+      "question": "Describe the cardiac findings in report CXR_0002.",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive medical diagnosis or treatment plan.\n\nBased on the retrieved references, I found that Report CXR_0002 had an indication of \"Shortness of breath, rule out CHF\" ([Source 3]). However, there is no explicit description of cardiac findings in this report. Since the indication mentions ruling out Congestive Heart Failure (CHF), it is likely that the radiologist was looking for signs of heart failure on the chest X-ray.\n\nTo provide a more informed answer, I would need access to the actual radiology report CXR_0002 or additional information about the patient's cardiac history and symptoms. However, based solely on the provided references, I can only conclude that there is no explicit description of cardiac findings in Report CXR_0002.\n\nIf you have any further questions or would like me to analyze a specific image, please let me know.",
+      "ground_truth": "The cardiac silhouette is enlarged. There is cephalization of the pulmonary vasculature. Bilateral pleural effusions are noted, greater on the right than the left. Kerley B lines are present. These findings are consistent with congestive heart failure.",
+      "retrieved_uids": [
+        "CXR_0018",
+        "CXR_0003",
+        "CXR_0002"
+      ],
+      "relevant_uids": [
+        "CXR_0002"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q05",
+      "question": "What is the diagnosis for the patient with chest pain in report CXR_0003?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive medical diagnosis. Consultation with a qualified healthcare professional is necessary for accurate diagnosis and treatment.\n\nBased on the provided reference documents, the indication for Report CXR_0003 is \"Chest pain, rule out pneumothorax.\" [Source 1]\n\nA pneumothorax is a condition where air enters the space between the lung and chest wall (pleural cavity), potentially causing lung collapse. The presence of chest pain in this context suggests that the patient's symptoms may be related to a pneumothorax.\n\nHowever, without further information or imaging analysis, it is not possible to confirm a diagnosis with certainty. A definitive diagnosis would require additional clinical evaluation and imaging studies (e.g., chest X-ray, CT scan).\n\n**Image Analysis:** If an image were provided for CXR_0003, I would analyze the radiographic findings for signs of pneumothorax, such as:\n\n* Presence of air in the pleural space\n* Lung collapse or atelectasis\n* Displacement of mediastinal structures\n\nPlease note that without access to the actual image, this analysis is speculative.\n\n**Conclusion:** Based on the provided reference documents, the indication for Report CXR_0003 suggests a possible diagnosis of pneumothorax in a patient presenting with chest pain. However, further evaluation and imaging studies are necessary to confirm or rule out this diagnosis. [Source 1]",
+      "ground_truth": "Right apical pneumothorax. There is a visible visceral pleural line along the right apex with absence of lung markings peripheral to this line.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0020",
+        "CXR_0018"
+      ],
+      "relevant_uids": [
+        "CXR_0003"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q06",
+      "question": "Were any abnormalities found in the pre-operative evaluation chest X-ray CXR_0004?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references, specifically [Source 3: Report CXR_0004 (findings)], no abnormalities were found in the pre-operative evaluation chest X-ray CXR_0004. The report states that:\n\n* \"The lungs are clear bilaterally.\"\n* \"No focal consolidation, pleural effusion, or pneumothorax.\"\n* \"The cardiac silhouette is normal in size.\"\n* \"The mediastinal contours are normal.\"\n* \"The visualized osseous structures show no acute abnormality.\"\n\nTherefore, the answer to the user's question is: No, no abnormalities were found in the pre-operative evaluation chest X-ray CXR_0004.\n\n[Source 3]",
+      "ground_truth": "No acute cardiopulmonary abnormality was found. The lungs are clear bilaterally with no focal consolidation, pleural effusion, or pneumothorax. The cardiac silhouette is normal in size and the mediastinal contours are normal.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0004"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q07",
+      "question": "What is the size of the pulmonary nodule in report CXR_0005 and what is the recommendation?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only. It should not be used as a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references:\n\nThe size of the pulmonary nodule in report CXR_0005 is 1.2 cm, located in the right upper lobe [Source 1: Report CXR_0005 (findings)].\n\nAccording to the impression section of the report, the recommendation is for continued surveillance per Fleischner Society guidelines [Source 2: Report CXR_0005 (impression)]. This implies that the nodule is considered stable and does not require immediate intervention or further diagnostic workup at this time.\n\nReferences:\n[Source 1: Report CXR_0005 (findings)]\n[Source 2: Report CXR_0005 (impression)]",
+      "ground_truth": "There is a 1.2 cm solitary pulmonary nodule in the right upper lobe, unchanged compared to prior examination dated 6 months ago. The recommendation is continued surveillance per Fleischner Society guidelines.",
+      "retrieved_uids": [
+        "CXR_0005"
+      ],
+      "relevant_uids": [
+        "CXR_0005"
+      ],
+      "scores": {
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q08",
+      "question": "What findings suggest malignancy in report CXR_0006?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**DISCLAIMER:** This response is for educational/research purposes only. It is not intended to be a professional medical diagnosis or advice.\n\nUnfortunately, I do not have access to Report CXR_0006. The retrieved references only include reports CXR_0001, CXR_0004, and CXR_0007. Therefore, I am unable to provide any information on findings that suggest malignancy in report CXR_0006.\n\nHowever, if you would like, I can provide general information on radiographic findings that may suggest malignancy in chest X-rays (CXR). According to [Source 1: American College of Radiology (ACR) Appropriateness Criteria for Chest Imaging], some common findings associated with lung cancer include:\n\n* Mass or nodule\n* Pleural effusion\n* Lymphadenopathy\n* Bone metastasis\n\nPlease note that these findings are not specific to malignancy and can have other causes. A thorough evaluation by a radiologist is necessary for an accurate diagnosis.\n\nIf you would like me to retrieve additional references or provide more information on the general topic, please let me know.",
+      "ground_truth": "There is a large right hilar mass measuring approximately 5 cm with associated right upper lobe atelectasis and mediastinal lymphadenopathy, suspicious for primary lung malignancy. A small right pleural effusion is also present.",
+      "retrieved_uids": [
+        "CXR_0004",
+        "CXR_0007",
+        "CXR_0001"
+      ],
+      "relevant_uids": [
+        "CXR_0006"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q09",
+      "question": "What does report CXR_0009 show about the patient's lungs?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational and research purposes only. It is not intended to be a substitute for professional medical advice or diagnosis.\n\nUnfortunately, there are no references available for Report CXR_0009 in our knowledge base. Therefore, I am unable to provide any information about the patient's lungs based on this report.\n\nHowever, if you would like, I can try to analyze the reports that are available (CXR_0016, CXR_0013, and CXR_0017) for any relevant findings related to lung conditions. Please let me know how I can assist further.\n\n**Image Analysis:** No image is provided for Report CXR_0009, so there is nothing to analyze.",
+      "ground_truth": "The lungs are hyperinflated with flattening of the diaphragms, consistent with chronic obstructive pulmonary disease. There is peribronchial thickening. No focal consolidation or pleural effusion. The findings are consistent with COPD with no acute superimposed process.",
+      "retrieved_uids": [
+        "CXR_0016",
+        "CXR_0013",
+        "CXR_0017"
+      ],
+      "relevant_uids": [
+        "CXR_0009"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q10",
+      "question": "What is the impression of the sarcoidosis follow-up in report CXR_0014?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only. It is not intended to be a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references, the impression of the sarcoidosis follow-up in report CXR_0014 is:\n\nBilateral hilar lymphadenopathy with upper lobe predominant interstitial disease, consistent with known sarcoidosis. Stable compared to prior examination. [Source 2: Report CXR_0014 (impression)]\n\nThis indicates that the patient's sarcoidosis appears stable, with no significant changes noted in comparison to their previous examination.",
+      "ground_truth": "Bilateral hilar lymphadenopathy with upper lobe predominant interstitial disease, consistent with known sarcoidosis. Stable compared to prior examination.",
+      "retrieved_uids": [
+        "CXR_0014",
+        "CXR_0001"
+      ],
+      "relevant_uids": [
+        "CXR_0014"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q11",
+      "question": "Which report describes a patient with cough and fever?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "Based on the retrieved references, I can answer that:\n\nThe report that describes a patient with cough and fever is [Source 1]: Report CXR_0001 (indication).\n\nAccording to this report, the indication for the chest X-ray is \"Cough and fever for 3 days.\" This matches the user's question.\n\n**Medical Disclaimer:** The information provided is for educational/research purposes only. It should not be used as a substitute for professional medical advice or diagnosis.",
+      "ground_truth": "Report CXR_0001 describes a patient with cough and fever for 3 days. The findings show a patchy opacity in the right lower lobe consistent with airspace disease, and the impression is right lower lobe pneumonia.",
+      "retrieved_uids": [
+        "CXR_0001",
+        "CXR_0013",
+        "CXR_0017"
+      ],
+      "relevant_uids": [
+        "CXR_0001"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q12",
+      "question": "Which patient has findings consistent with tuberculosis?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nBased on the retrieved references, the patient with findings consistent with tuberculosis is **CXR_0011**. The impression from Report CXR_0011 states that there is a right upper lobe cavitary lesion with tree-in-bud opacities, which are highly suspicious for active pulmonary tuberculosis [Source 2]. Additionally, calcified right hilar granulomas suggest prior granulomatous disease, further supporting the suspicion of TB.\n\nIn contrast, Report CXR_0016 describes diffuse bilateral alveolar opacities and air bronchograms, but does not mention findings suggestive of tuberculosis. The report mentions extensive parenchymal disease, which could be consistent with various conditions, including acute respiratory distress syndrome (ARDS) or pneumonia [Source 3].\n\nTherefore, based on the provided references, CXR_0011 is the patient with findings most consistent with tuberculosis.\n\n**References:**\n\n[Source 2] Report CXR_0011 (impression)\n[Source 3] Report CXR_0016 (findings)",
+      "ground_truth": "Report CXR_0011 shows a right upper lobe cavitary lesion measuring approximately 3 cm with surrounding tree-in-bud opacities, highly suspicious for active pulmonary tuberculosis. Calcified right hilar granulomas suggest prior granulomatous disease.",
+      "retrieved_uids": [
+        "CXR_0011",
+        "CXR_0016"
+      ],
+      "relevant_uids": [
+        "CXR_0011"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q13",
+      "question": "Which report mentions Kerley B lines and what do they indicate?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only. It should not be used as a substitute for professional medical judgment.\n\nBased on the retrieved references, [Source 2: Report CXR_0002 (findings)] mentions Kerley B lines as part of its findings. According to this report, Kerley B lines are present.\n\nKerley B lines are short, horizontal lines at the lung periphery that indicate interstitial edema or pulmonary congestion. They are a sign of fluid accumulation in the lungs and can be seen in conditions such as heart failure, acute respiratory distress syndrome (ARDS), or other causes of increased pulmonary venous pressure [Source 2].\n\n**References:**\n\n[Source 1]: Not relevant to this specific question.\n[Source 2]: Report CXR_0002 (findings)\n[Source 3]: Not relevant to this specific question.",
+      "ground_truth": "Report CXR_0002 mentions Kerley B lines. They are present in the context of an enlarged cardiac silhouette, cephalization of pulmonary vasculature, and bilateral pleural effusions, indicating congestive heart failure.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0002",
+        "CXR_0003"
+      ],
+      "relevant_uids": [
+        "CXR_0002"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q14",
+      "question": "Which report describes a spiculated lung mass?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** The following response is for educational/research purposes only and should not be considered as a medical diagnosis or advice.\n\nBased on the retrieved references, Report CXR_0017 (findings) describes a 2 cm spiculated mass in the left upper lobe. [Source 1: Report CXR_0017]\n\nThis report explicitly mentions the presence of a spiculated mass, which is a characteristic feature often associated with malignancy.\n\nTherefore, the answer to the user's question is:\n\nReport CXR_0017 (findings) describes a spiculated lung mass. [Source 1]",
+      "ground_truth": "Report CXR_0017 describes a 2 cm spiculated mass in the left upper lobe with mild left hilar prominence. The impression indicates it is suspicious for malignancy in a patient with smoking history, and CT chest with contrast is recommended.",
+      "retrieved_uids": [
+        "CXR_0017",
+        "CXR_0009",
+        "CXR_0006"
+      ],
+      "relevant_uids": [
+        "CXR_0017"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q15",
+      "question": "Which patient presented with pleuritic chest pain and what was found?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nBased on the retrieved references, it appears that two patients had indications related to chest pain. However, only one patient's report (CXR_0020) specifically mentioned pleuritic chest pain as the indication [Source 1].\n\nThe findings for this patient (CXR_0020) are as follows: A wedge-shaped opacity was observed in the right lower lobe periphery with its base against the pleural surface, indicating a possible pulmonary consolidation or infection. Additionally, a small right pleural effusion was present, which can be associated with pleuritic chest pain [Source 3]. The left lung was clear, and no pneumothorax was detected.\n\n**Image Analysis:** If an image were provided for CXR_0020, the analysis would focus on the described findings: a wedge-shaped opacity in the right lower lobe periphery and a small right pleural effusion. The presence of these features is consistent with the indication of pleuritic chest pain.\n\nReferences:\n[Source 1] Report CXR_0020 (indication)\n[Source 3] Report CXR_0020 (findings)",
+      "ground_truth": "Report CXR_0020 describes a patient with pleuritic chest pain. Findings include a wedge-shaped opacity in the right lower lobe periphery with its base against the pleural surface and a small right pleural effusion, concerning for pulmonary infarction. CT pulmonary angiography was recommended to evaluate for pulmonary embolism.",
+      "retrieved_uids": [
+        "CXR_0020",
+        "CXR_0003"
+      ],
+      "relevant_uids": [
+        "CXR_0020"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q16",
+      "question": "Which report describes ARDS and what are the key findings?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** The following analysis is for educational/research purposes only. It should not be used as a substitute for professional medical judgment.\n\nBased on the retrieved references, Report CXR_0016 (impression) describes Acute Respiratory Distress Syndrome (ARDS). According to this report, the key findings are:\n\n* Diffuse bilateral alveolar opacities consistent with ARDS in the appropriate clinical setting.\n* Appropriately positioned endotracheal tube.\n\nThis suggests that the patient is being treated for ARDS and is receiving mechanical ventilation support. [Source 1: Report CXR_0016 (impression)]\n\nNote that there are no findings related to ARDS in Reports CXR_0010 or CXR_0009, which describe a trauma case and COPD exacerbation, respectively.",
+      "ground_truth": "Report CXR_0016 describes ARDS. Key findings include diffuse bilateral alveolar opacities involving all lung zones with air bronchograms bilaterally. An endotracheal tube is present with tip 4 cm above the carina.",
+      "retrieved_uids": [
+        "CXR_0016",
+        "CXR_0010",
+        "CXR_0009"
+      ],
+      "relevant_uids": [
+        "CXR_0016"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q17",
+      "question": "Which patient was evaluated for difficulty swallowing?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references, I can answer that:\n\nThe patient who was evaluated for difficulty swallowing is associated with Report CXR_0012 [Source 1].\n\nThis indicates that this report is related to a patient with an indication of difficulty swallowing.",
+      "ground_truth": "Report CXR_0012 describes a patient evaluated for difficulty swallowing. Findings include a possible hiatal hernia (retrocardiac soft tissue density) and widening of the mediastinum at the aortic arch level, likely representing a tortuous aorta.",
+      "retrieved_uids": [
+        "CXR_0012",
+        "CXR_0013",
+        "CXR_0003"
+      ],
+      "relevant_uids": [
+        "CXR_0012"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q18",
+      "question": "Which report shows aspiration pneumonia findings?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan. Consult a qualified medical professional for personalized advice.\n\nBased on the retrieved references, none of the reports explicitly mention \"aspiration pneumonia\" as a finding. However, [Source 1: Report CXR_0013] indicates that the patient has a productive cough and aspiration is to be ruled out. This suggests that the radiologist is considering the possibility of aspiration, but it's not a confirmed diagnosis.\n\nSince there are no explicit findings or impressions related to aspiration pneumonia in any of the reports, I cannot conclusively identify which report shows aspiration pneumonia findings.\n\n**Sources:**\n\n* [Source 1: Report CXR_0013 (indication)]\n* [Source 2: Report CXR_0001 (impression)]\n* [Source 3: Report CXR_0017 (indication)]",
+      "ground_truth": "Report CXR_0013 shows dense consolidation in the right lower lobe and right middle lobe with air bronchograms, consistent with aspiration pneumonia. An enteric tube is present with the tip projecting over the stomach.",
+      "retrieved_uids": [
+        "CXR_0013",
+        "CXR_0001",
+        "CXR_0017"
+      ],
+      "relevant_uids": [
+        "CXR_0013"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q19",
+      "question": "Which report describes post-thoracotomy findings?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Analysis and Answer**\n\nBased on the retrieved references, Report CXR_0008 (indication) and Report CXR_0008 (findings) are related to the same patient.\n\nReport CXR_0008 (indication) indicates that the patient is \"Status post right thoracotomy,\" which suggests a recent surgical procedure in the right chest cavity.\n\nThe findings section of Report CXR_0008 confirms this, describing \"post-surgical changes of right thoracotomy\" and several complications related to the surgery.\n\nTherefore, Report CXR_0008 (findings) is the report that describes post-thoracotomy findings.\n\n**Sources:**\n\n[Source 1: Report CXR_0008 (indication)]\n[Source 3: Report CXR_0008 (findings)]\n\n**Medical Disclaimer:** This analysis is for educational/research purposes only and should not be used as a substitute for professional medical advice or diagnosis.",
+      "ground_truth": "Report CXR_0008 describes post-surgical changes of right thoracotomy with a right chest tube in place, small residual right pneumothorax, subcutaneous emphysema in the right chest wall, and small right pleural effusion.",
+      "retrieved_uids": [
+        "CXR_0008",
+        "CXR_0003"
+      ],
+      "relevant_uids": [
+        "CXR_0008"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q20",
+      "question": "What cardiothoracic ratio is reported for patient CXR_0018?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "**Answer:** The cardiothoracic ratio (CTR) for patient CXR_0018 is approximately 0.55, as reported in the findings section of Report CXR_0018 [Source 3].\n\n**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or interpretation of radiology reports.",
+      "ground_truth": "Report CXR_0018 shows a cardiothoracic ratio of approximately 0.55, indicating mild cardiomegaly with mild pulmonary vascular congestion.",
+      "retrieved_uids": [
+        "CXR_0018",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0018"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q21",
+      "question": "Compare the pleural effusion findings across reports CXR_0002, CXR_0006, and CXR_0020.",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This analysis is for educational/research purposes only and should not be considered a substitute for professional medical interpretation.\n\nBased on the retrieved references:\n\n* Report CXR_0020 (indication) indicates \"Pleuritic chest pain\" without mentioning pleural effusion.\n* Report CXR_0002 (impression) mentions \"Bilateral pleural effusions\".\n* There is no mention of pleural effusion in Report CXR_0004 (findings).\n\nIt appears that there is a discrepancy between the findings of Reports CXR_0020 and CXR_0002 regarding the presence of pleural effusions. Report CXR_0020 does not mention pleural effusion, whereas Report CXR_0002 indicates bilateral pleural effusions.\n\n**Image Analysis:** Since no images are provided for analysis, I will rely solely on the reference documents.\n\nIn conclusion, based on the retrieved references, there is a discrepancy in the findings regarding pleural effusions across Reports CXR_0020 and CXR_0002. Report CXR_0004 does not mention pleural effusion at all.\n\n**Sources:**\n[Source 1: Report CXR_0004 (findings)]\n[Source 2: Report CXR_0020 (indication)]\n[Source 3: Report CXR_0002 (impression)]",
+      "ground_truth": "CXR_0002 shows bilateral pleural effusions greater on the right than the left in the context of CHF. CXR_0006 shows a small right pleural effusion associated with a right hilar mass and mediastinal lymphadenopathy suspicious for lung malignancy. CXR_0020 shows a small right pleural effusion with a wedge-shaped peripheral opacity concerning for pulmonary infarction.",
+      "retrieved_uids": [
+        "CXR_0004",
+        "CXR_0020",
+        "CXR_0002"
+      ],
+      "relevant_uids": [
+        "CXR_0002",
+        "CXR_0006",
+        "CXR_0020"
+      ],
+      "scores": {
+        "context_precision": 0.6667,
+        "context_recall": 0.6667,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q22",
+      "question": "Compare the two reports with suspected lung malignancy (CXR_0006 and CXR_0017).",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan. Consultation with a qualified healthcare professional is recommended for accurate interpretation of medical images.\n\nBased on the retrieved references, I do not have access to reports CXR_0006 and CXR_0017. However, since you've asked me to compare these two reports with suspected lung malignancy, I can provide general information on how radiologists interpret chest X-rays (CXR) for lung nodules.\n\nAccording to [Source 1: Report CXR_0005], the indication is a follow-up lung nodule. This suggests that previous imaging or clinical evaluation has identified a lung nodule, and this report is intended to assess any changes or progression of the lesion.\n\nFor productive cough and aspiration (CXR_0013), radiologists typically look for signs such as consolidation, atelectasis, or pleural effusion [Source 2: Report CXR_0013]. These findings can indicate an infectious process or other complications related to aspiration.\n\nIn cases of acute respiratory distress (CXR_0016), the focus is on identifying causes such as pneumonia, pulmonary edema, or pneumothorax [Source 3: Report CXR_0016].\n\nWithout access to reports CXR_0006 and CXR_0017, I'm unable to provide a direct comparison. However, if you'd like to share these reports or images, I can attempt to analyze them in conjunction with the retrieved references.\n\nPlease note that this response is based solely on the provided reference documents and does not constitute a comprehensive evaluation of lung malignancy.",
+      "ground_truth": "CXR_0006 shows a large 5 cm right hilar mass with associated right upper lobe atelectasis and mediastinal lymphadenopathy, suggesting a more advanced presentation. CXR_0017 shows a smaller 2 cm spiculated mass in the left upper lobe with mild hilar prominence, in a patient with smoking history. Both recommend CT chest with contrast for further evaluation.",
+      "retrieved_uids": [
+        "CXR_0005",
+        "CXR_0013",
+        "CXR_0016"
+      ],
+      "relevant_uids": [
+        "CXR_0006",
+        "CXR_0017"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q23",
+      "question": "Which reports show pneumothorax and how do they differ?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or interpretation of radiology reports.\n\nBased on the retrieved references, I can answer the user's question as follows:\n\nTwo reports mention pneumothorax: Report CXR_0003 (Impression) and Report CXR_0004 (Findings).\n\n**Report CXR_0003 (Impression):**\n\n* Indicates a right apical pneumothorax. [Source 2]\n* This report suggests that the presence of pneumothorax was confirmed by imaging.\n\n**Report CXR_0004 (Findings):**\n\n* States \"No focal consolidation, pleural effusion, or pneumothorax.\" [Source 3]\n* This report indicates that no pneumothorax was detected on this particular chest radiograph.\n\nThe key difference between these two reports is the presence or absence of pneumothorax. Report CXR_0003 confirms a right apical pneumothorax, while Report CXR_0004 shows no evidence of pneumothorax.\n\nSources:\n[Source 1: Report CXR_0003 (indication)]\n[Source 2: Report CXR_0003 (impression)]\n[Source 3: Report CXR_0004 (findings)]",
+      "ground_truth": "CXR_0003 shows a right apical pneumothorax with a visible visceral pleural line and absent lung markings peripherally. CXR_0008 shows a small residual right pneumothorax post-thoracotomy with a chest tube in place. CXR_0010 shows a small left-sided pneumothorax associated with rib fractures from trauma. The causes differ: CXR_0003 is likely spontaneous, CXR_0008 is post-surgical, and CXR_0010 is traumatic.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0003",
+        "CXR_0008",
+        "CXR_0010"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 0.3333,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q24",
+      "question": "Compare the cardiac findings in reports CXR_0002 and CXR_0018.",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a substitute for professional medical advice or interpretation of radiology reports.\n\nBased on the provided references, I can compare the indications related to cardiac findings in reports CXR_0002 (not available) and CXR_0018. However, since report CXR_0002 is not included in the retrieved references, I will only be able to provide information on report CXR_0018.\n\nReport CXR_0018 indicates \"Palpitations, rule out cardiomegaly.\" This suggests that the primary cardiac concern was to evaluate for any signs of cardiomegaly (enlargement of the heart) in relation to the patient's palpitations. However, without access to report CXR_0002, I am unable to provide a direct comparison.\n\nIf you would like to retrieve report CXR_0002 or provide additional context, I may be able to offer more comprehensive information on cardiac findings between the two reports.\n\n**Sources:**\n\n* [Source 1]: Report CXR_0018 (indication)\n* [Source 3]: Report CXR_0004 (indication) - Note: This report is unrelated to cardiac findings but included in the retrieved references.",
+      "ground_truth": "CXR_0002 shows an enlarged cardiac silhouette with cephalization of pulmonary vasculature, bilateral pleural effusions, and Kerley B lines consistent with congestive heart failure \u2014 a more severe presentation. CXR_0018 shows mild cardiomegaly with a cardiothoracic ratio of 0.55 and mild pulmonary vascular congestion but no pleural effusion, suggesting an earlier or less severe stage of cardiac disease.",
+      "retrieved_uids": [
+        "CXR_0018",
+        "CXR_0003",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0002",
+        "CXR_0018"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q25",
+      "question": "Which reports have normal chest X-ray findings?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational and research purposes only. It should not be used as a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references, I can answer that:\n\n* Report CXR_0004 has normal chest X-ray findings, with no focal consolidation, pleural effusion, or pneumothorax noted ([Source 2: Report CXR_0004]).\n* Report CXR_0020's indication is for pleuritic chest pain, but the actual report is not provided. However, since it's an indication and not a finding, we cannot conclude that the findings are normal.\n\nReport CXR_0003 does not provide specific findings, only an indication of chest pain to rule out pneumothorax ([Source 1: Report CXR_0003]).\n\nTherefore, based on the provided references, Report CXR_0004 has documented normal chest X-ray findings.",
+      "ground_truth": "Report CXR_0004 (pre-operative evaluation) shows no acute cardiopulmonary abnormality with clear lungs, normal cardiac silhouette, and normal mediastinal contours. Report CXR_0015 also has essentially normal findings apart from the expected presence of a right IJ central venous catheter.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0004",
+        "CXR_0020"
+      ],
+      "relevant_uids": [
+        "CXR_0004",
+        "CXR_0015"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q26",
+      "question": "Compare the interstitial lung findings in reports CXR_0007 and CXR_0014.",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nUnfortunately, I do not have access to Reports CXR_0007 and CXR_0014 in the provided references. The retrieved references include reports CXR_0005, CXR_0016, and CXR_0017, but not CXR_0007 and CXR_0014.\n\nTo provide a comparison of interstitial lung findings between Reports CXR_0007 and CXR_0014, I would need access to those specific reports. If you have the relevant information or can provide additional context, I'd be happy to assist further.\n\nHowever, based on general knowledge from radiology reports [Source 1], interstitial lung abnormalities can manifest as reticular patterns, ground-glass opacities, or nodules, among other findings. The specific characteristics and distribution of these findings would require a detailed report analysis, which is not possible with the provided references.\n\nIf you have any additional information or context regarding Reports CXR_0007 and CXR_0014, I'd be happy to help further.",
+      "ground_truth": "CXR_0007 shows bilateral diffuse interstitial opacities with ground-glass opacities more prominent in the lower lobes, in the context of neutropenic fever, with differential including opportunistic infection or drug reaction. CXR_0014 shows reticular interstitial opacities with upper lobe predominant distribution and bilateral hilar lymphadenopathy, consistent with known sarcoidosis. The key differences are distribution (lower lobe vs upper lobe) and clinical context (acute infection vs chronic granulomatous disease).",
+      "retrieved_uids": [
+        "CXR_0005",
+        "CXR_0016",
+        "CXR_0017"
+      ],
+      "relevant_uids": [
+        "CXR_0007",
+        "CXR_0014"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q27",
+      "question": "Which reports describe consolidation and what are the different etiologies?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nBased on the retrieved references, I found that:\n\n* Report CXR_0013 describes \"dense consolidation\" in the right lower lobe and right middle lobe with air bronchograms. [Source 1: Report CXR_0013 (findings)]\n* Report CXR_0009 does not mention focal consolidation, but rather describes hyperinflation of the lungs consistent with chronic obstructive pulmonary disease (COPD). [Source 2: Report CXR_0009 (findings)]\n\nThe two reports that describe consolidation are:\n\n1. **Report CXR_0013**: Dense consolidation in the right lower lobe and right middle lobe, which may be indicative of pneumonia or another infectious process.\n2. None of the other reports mention focal consolidation.\n\nAs for the etiologies, based on the provided references, we can only speculate about the cause of consolidation in Report CXR_0013. However, it is worth noting that air bronchograms are often associated with alveolar consolidation, which can be seen in conditions such as pneumonia or acute respiratory distress syndrome (ARDS). [Source not explicitly cited, but based on general medical knowledge]\n\nIt's essential to note that a definitive diagnosis would require further investigation and imaging studies. These reports should only be used as a starting point for further analysis.\n\nReferences:\n\n[Source 1: Report CXR_0013 (findings)]\n[Source 2: Report CXR_0009 (findings)]",
+      "ground_truth": "CXR_0001 shows a patchy opacity in the right lower lobe (pneumonia from infection). CXR_0013 shows dense consolidation in the right lower and middle lobes with air bronchograms (aspiration pneumonia). CXR_0016 shows diffuse bilateral alveolar opacities with air bronchograms (ARDS). The consolidation patterns differ by distribution and clinical setting.",
+      "retrieved_uids": [
+        "CXR_0013",
+        "CXR_0009",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0001",
+        "CXR_0013",
+        "CXR_0016"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 0.3333,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q28",
+      "question": "How do the right upper lobe findings differ between CXR_0005, CXR_0006, and CXR_0011?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only. It does not constitute a medical diagnosis or advice.\n\nUnfortunately, I couldn't find any references to reports CXR_0005, CXR_0006, and CXR_0011 in the provided documents. The retrieved references mention reports CXR_0004 (indication), CXR_0017 (findings), and CXR_0001 (impression). Since there is no information on these specific reports, I am unable to provide a comparison of right upper lobe findings between them.\n\nIf you could provide more context or additional references, I would be happy to help.",
+      "ground_truth": "CXR_0005 shows a stable 1.2 cm solitary pulmonary nodule with surveillance recommended. CXR_0006 shows right upper lobe atelectasis secondary to a large 5 cm right hilar mass suspicious for malignancy. CXR_0011 shows a 3 cm cavitary lesion with tree-in-bud opacities suspicious for active tuberculosis. Each represents a different pathology: benign nodule, malignancy-related atelectasis, and infectious cavity.",
+      "retrieved_uids": [
+        "CXR_0004",
+        "CXR_0017",
+        "CXR_0001"
+      ],
+      "relevant_uids": [
+        "CXR_0005",
+        "CXR_0006",
+        "CXR_0011"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q29",
+      "question": "Compare the mediastinal findings across all reports.",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Mediastinal Findings Comparison**\n\nBased on the retrieved references, we can compare the mediastinal findings across all three reports.\n\n* Report CXR_0001 (findings): The mediastinum is unremarkable.\n* Report CXR_0015 (indication) and Report CXR_0003 (indication): There are no specific findings or descriptions of the mediastinum in these two reports, as they only indicate line placement confirmation and chest pain with a rule out pneumothorax, respectively.\n\nTherefore, based on the available references, we can conclude that the mediastinal findings are unremarkable in Report CXR_0001. However, there is no information to compare or contrast with the other two reports regarding mediastinal findings.\n\n**Disclaimer:** This analysis is for educational/research purposes only and should not be used as a substitute for professional medical judgment.",
+      "ground_truth": "CXR_0006 shows mediastinal lymphadenopathy associated with a right hilar mass. CXR_0012 shows widening of the mediastinum at the aortic arch level likely from a tortuous aorta. CXR_0014 shows bilateral symmetric hilar lymphadenopathy consistent with sarcoidosis. CXR_0010 specifically notes no mediastinal widening, ruling out aortic injury in the trauma setting. Most other reports describe an unremarkable mediastinum.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0003",
+        "CXR_0001"
+      ],
+      "relevant_uids": [
+        "CXR_0006",
+        "CXR_0010",
+        "CXR_0012",
+        "CXR_0014"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q30",
+      "question": "Which reports recommend further imaging with CT and why?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as a substitute for professional medical advice or diagnosis.\n\nBased on the retrieved references, [Source 2: Report CXR_0012] recommends considering further imaging with CT if there is a clinical concern for other pathology. The report states that \"CT may be considered if clinical concern for other pathology\" in addition to the possible hiatal hernia and mediastinal widening at the aortic arch level.\n\nNo reports recommend further imaging with CT as a definitive next step, but rather as an option depending on the clinical context.\n\n**References:**\n\n[Source 2: Report CXR_0012] Impression: Possible hiatal hernia. Mediastinal widening at the aortic arch level, likely tortuous aorta in the clinical setting, but CT may be considered if clinical concern for other pathology.",
+      "ground_truth": "CXR_0006 recommends CT chest with contrast for further evaluation of a right hilar mass suspicious for primary lung malignancy. CXR_0017 recommends CT chest with contrast for a spiculated left upper lobe mass suspicious for malignancy and for staging. CXR_0020 recommends CT pulmonary angiography to evaluate for pulmonary embolism given a wedge-shaped opacity concerning for pulmonary infarction.",
+      "retrieved_uids": [
+        "CXR_0004",
+        "CXR_0012"
+      ],
+      "relevant_uids": [
+        "CXR_0006",
+        "CXR_0017",
+        "CXR_0020"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q31",
+      "question": "A patient presents with acute onset dyspnea, pleuritic chest pain, and a wedge-shaped peripheral opacity on chest X-ray. Which report matches this presentation and what is the likely diagnosis?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as a definitive diagnosis or treatment plan.\n\nBased on the provided reference documents, I will analyze the reports to determine which one matches the patient's presentation.\n\nThe user's description of acute onset dyspnea (shortness of breath), pleuritic chest pain, and a wedge-shaped peripheral opacity on chest X-ray suggests a pulmonary embolism (PE) or pneumonia. However, upon reviewing the reference documents:\n\n* Report CXR_0020 [Source 1] indicates pleuritic chest pain but does not mention dyspnea or a specific radiographic finding.\n* Report CXR_0003 [Source 2] mentions chest pain and rules out pneumothorax but also does not specify dyspnea or the wedge-shaped peripheral opacity.\n\nReport CXR_0016 [Source 3] describes diffuse bilateral alveolar opacities, air bronchograms, and an endotracheal tube. However, it does not specifically mention pleuritic chest pain or a wedge-shaped peripheral opacity.\n\nUnfortunately, none of the provided reports exactly match the patient's presentation. However, based on the radiographic findings described in Report CXR_0016 [Source 3], I would suggest that this report is most relevant to the user's description of diffuse bilateral alveolar opacities and air bronchograms.\n\nThe wedge-shaped peripheral opacity mentioned by the user could be indicative of a pulmonary infarct, which is often seen in conjunction with pulmonary embolism. However, without further information or specific radiographic findings from Report CXR_0016 [Source 3] that match the patient's presentation, it is difficult to make a definitive diagnosis.\n\n**Recommendation:** Further investigation and imaging studies would be necessary to confirm the diagnosis of pulmonary embolism or pneumonia in this patient.",
+      "ground_truth": "Report CXR_0020 matches this presentation. The findings show a wedge-shaped opacity in the right lower lobe periphery with its base against the pleural surface and a small right pleural effusion. The likely diagnosis is pulmonary infarction secondary to pulmonary embolism. CT pulmonary angiography is recommended for confirmation.",
+      "retrieved_uids": [
+        "CXR_0020",
+        "CXR_0003",
+        "CXR_0016"
+      ],
+      "relevant_uids": [
+        "CXR_0020"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q32",
+      "question": "A patient with a history of IV drug use presents with fever, neutropenia, and bilateral ground-glass opacities. Which report is most relevant and what are the differential diagnoses?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as a definitive diagnosis or treatment plan. Consultation with a qualified healthcare professional is recommended.\n\nBased on the retrieved references, I would recommend Report CXR_0007 (impression) [Source 1] as the most relevant report for this patient's presentation.\n\nThe bilateral ground-glass opacities in the setting of neutropenic fever are consistent with the findings described in Report CXR_0007. The differential diagnoses mentioned in this report include opportunistic infections such as PCP (Pneumocystis jirovecii pneumonia) and fungal infections, as well as drug reactions [Source 1].\n\nGiven the patient's history of IV drug use, it is essential to consider the possibility of an opportunistic infection, particularly PCP or fungal infections. The presence of neutropenia further increases the risk for these types of infections.\n\nThe other report, CXR_0016 (impression) [Source 3], describes diffuse bilateral alveolar opacities consistent with ARDS (Acute Respiratory Distress Syndrome), which is a more severe condition typically associated with a different clinical presentation and imaging findings. While it's possible that the patient could progress to ARDS, the initial findings of bilateral ground-glass opacities in the setting of neutropenic fever make Report CXR_0007 (impression) [Source 1] the most relevant report for this patient.\n\n**References:**\n\n[Source 1]: Report CXR_0007 (impression)\n[Source 2]: Report CXR_0007 (indication)\n[Source 3]: Report CXR_0016 (impression)\n\nPlease consult with a qualified healthcare professional to discuss the patient's specific case and determine the best course of action.",
+      "ground_truth": "Report CXR_0007 is most relevant. It shows bilateral diffuse interstitial opacities with ground-glass opacities in the setting of neutropenic fever. A central venous catheter tip is in the superior vena cava. The differential diagnoses include opportunistic infection such as PCP or fungal infection versus drug reaction.",
+      "retrieved_uids": [
+        "CXR_0007",
+        "CXR_0016"
+      ],
+      "relevant_uids": [
+        "CXR_0007"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q33",
+      "question": "A long-term smoker presents with chronic cough, weight loss, and a spiculated lung mass. Which report matches and what follow-up is recommended?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as a substitute for professional medical advice or diagnosis.\n\nBased on the provided reference documents, I will analyze the user's question to determine which report matches their presentation and recommend follow-up.\n\nThe user presents with:\n\n1. Chronic cough (consistent with [Source 1: Report CXR_0017])\n2. Weight loss\n3. A spiculated lung mass\n\nThe key findings that match are the chronic cough, which is consistent with [Source 1: Report CXR_0017]. However, the presence of a spiculated lung mass and weight loss suggest a more serious underlying condition.\n\nConsidering these additional symptoms, I would recommend matching this presentation to [Source 3: Report CXR_0005] (indication: Follow-up lung nodule). The report's indication for follow-up is likely due to a suspicious or previously identified lung lesion, which may be the spiculated mass described by the user.\n\nFor follow-up, I would recommend further imaging studies, such as a computed tomography (CT) scan of the chest with contrast, to better characterize the lung mass and assess for any potential spread. Additionally, a thorough clinical evaluation, including laboratory tests and possibly a bronchoscopy, may be warranted to investigate the cause of weight loss and cough.\n\n**Recommendation:** Follow-up CT scan of the chest with contrast, along with a comprehensive clinical evaluation, is recommended to further manage this patient's condition.\n\n**Sources:**\n\n* [Source 1]: Report CXR_0017 (indication)\n* [Source 3]: Report CXR_0005 (indication)",
+      "ground_truth": "Report CXR_0017 matches this presentation. It shows a 2 cm spiculated mass in the left upper lobe with mild left hilar prominence that may represent lymphadenopathy. The impression is suspicious for malignancy given the smoking history. CT chest with contrast is recommended for further evaluation and staging.",
+      "retrieved_uids": [
+        "CXR_0017",
+        "CXR_0013",
+        "CXR_0005"
+      ],
+      "relevant_uids": [
+        "CXR_0017"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q34",
+      "question": "A patient from an endemic area presents with chronic cough, night sweats, and an upper lobe cavitary lesion. Which report matches and what testing is recommended?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nBased on the provided reference documents, I analyzed the patient's symptoms and findings to determine which report they match.\n\nThe patient presents with chronic cough, night sweats, and an upper lobe cavitary lesion. These symptoms are suggestive of tuberculosis (TB), particularly in an endemic area [Source 3: Tuberculosis, Centers for Disease Control and Prevention].\n\nComparing the patient's presentation to the retrieved references:\n\n* Report CXR_0017 mentions a chronic cough in a smoker, which does not match the patient's profile.\n* Report CXR_0016 describes diffuse bilateral alveolar opacities, air bronchograms, and an extensive parenchymal disease, which is more consistent with pulmonary tuberculosis or another severe respiratory infection.\n\nHowever, there is no mention of an upper lobe cavitary lesion in Report CXR_0016. The closest match to the patient's presentation is not explicitly mentioned in the retrieved references.\n\nGiven the patient's symptoms and findings, further testing for tuberculosis (TB) would be recommended, including:\n\n* Chest X-ray or CT scan with contrast to assess the extent of disease\n* Sputum smear microscopy for acid-fast bacilli (AFB)\n* Interferon-gamma release assays (IGRAs) or tuberculin skin test (TST) to detect latent TB infection\n\n**References:**\n\n[Source 3: Tuberculosis, Centers for Disease Control and Prevention]\n[Source 4: Diagnostic Testing for Latent Tuberculosis Infection, American Thoracic Society]\n\nPlease note that this analysis is based on the provided references and may not be comprehensive or definitive. Further evaluation by a qualified healthcare professional is necessary to confirm the diagnosis and develop an appropriate treatment plan.",
+      "ground_truth": "Report CXR_0011 matches this presentation. It shows a right upper lobe cavitary lesion measuring approximately 3 cm with surrounding tree-in-bud opacities and patchy opacities in the right middle lobe, highly suspicious for active pulmonary tuberculosis. Calcified right hilar granulomas suggest prior granulomatous disease. Sputum AFB testing is recommended.",
+      "retrieved_uids": [
+        "CXR_0013",
+        "CXR_0017",
+        "CXR_0016"
+      ],
+      "relevant_uids": [
+        "CXR_0011"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q35",
+      "question": "A patient involved in a motor vehicle accident presents with left-sided chest pain and difficulty breathing. Which report is relevant and what injuries were found?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "**Relevant Report:** [Source 3: Report CXR_0010 (findings)]\n\n**Injuries Found:** Based on the analysis of the chest radiograph (CXR) in Report CXR_0010, the patient has sustained several injuries:\n\n1. Fractures involving the left 4th, 5th, and 6th ribs laterally [Source 3]\n2. A small left hemothorax is present [Source 3]\n3. There is a small left-sided pneumothorax [Source 3]\n\nThese findings are consistent with the patient's symptoms of left-sided chest pain and difficulty breathing.\n\n**Medical Disclaimer:** This analysis is for educational/research purposes only and should not be used as a substitute for a professional medical diagnosis or treatment.",
+      "ground_truth": "Report CXR_0010 is relevant. The findings show fractures involving the left 4th, 5th, and 6th ribs laterally with associated small left hemothorax and left-sided pneumothorax. No mediastinal widening was seen to suggest aortic injury and no vertebral body fracture was identified.",
+      "retrieved_uids": [
+        "CXR_0003",
+        "CXR_0020",
+        "CXR_0010"
+      ],
+      "relevant_uids": [
+        "CXR_0010"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q36",
+      "question": "What types of tubes and lines are documented across the reports?",
+      "category": "procedural",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan.\n\nBased on the retrieved references, the following types of tubes and lines are documented:\n\n1. **Endotracheal tube**: Present with tip approximately 3 cm above the carina, in satisfactory position (Source 2: Report CXR_0019).\n2. **Nasogastric tube**: Present with the tip projecting below the diaphragm (Source 2: Report CXR_0019).\n3. **Right IJ central line** (also referred to as a Right Internal Jugular Central Venous Catheter): With tip in the Superior Vena Cava (SVC) (Source 2: Report CXR_0019).\n\nThese findings are consistent with the impression from Report CXR_0015, which states that there is a Right IJ central venous catheter with tip at the cavoatrial junction (Source 3: Report CXR_0015).",
+      "ground_truth": "CXR_0007 documents a central venous catheter with tip in the superior vena cava. CXR_0008 has a right chest tube in place. CXR_0013 has an enteric tube with tip projecting over the stomach. CXR_0015 has a right internal jugular central venous catheter with tip at the cavoatrial junction. CXR_0016 has an endotracheal tube with tip 4 cm above the carina. CXR_0019 has an endotracheal tube (3 cm above carina), a nasogastric tube (tip below diaphragm), and a right IJ central line (tip in SVC).",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0019"
+      ],
+      "relevant_uids": [
+        "CXR_0007",
+        "CXR_0008",
+        "CXR_0013",
+        "CXR_0015",
+        "CXR_0016",
+        "CXR_0019"
+      ],
+      "scores": {
+        "context_precision": 1.0,
+        "context_recall": 0.3333,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q37",
+      "question": "Where is the endotracheal tube tip positioned in report CXR_0016?",
+      "category": "procedural",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be used as a substitute for professional medical advice or diagnosis.\n\nUnfortunately, there is no reference document provided for report CXR_0016. However, based on the retrieved references, I can attempt to provide an answer based on the information available.\n\nSince report CXR_0019 (Source 1) mentions that the endotracheal tube tip is approximately 3 cm above the carina in a satisfactory position, it's possible that this positioning was consistent across multiple reports. However, without specific information from report CXR_0016, I cannot confirm the exact positioning of the endotracheal tube tip.\n\nIf you have any additional references or more context about report CXR_0016, I would be happy to try and provide a more accurate answer.\n\n**Sources Used:** [Source 1: Report CXR_0019 (findings)]",
+      "ground_truth": "In report CXR_0016, the endotracheal tube tip is positioned 4 cm above the carina, which is described as appropriately positioned.",
+      "retrieved_uids": [
+        "CXR_0019",
+        "CXR_0015"
+      ],
+      "relevant_uids": [
+        "CXR_0016"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q38",
+      "question": "Describe all the lines and tubes in report CXR_0019 and their positions.",
+      "category": "procedural",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** The following analysis is for educational/research purposes only and should not be used as a substitute for professional medical interpretation.\n\nBased on Report CXR_0019 (findings) [Source 3], I have identified the lines and tubes mentioned in the report:\n\n1. **Endotracheal tube**: Present with tip approximately 3 cm above the carina, indicating that it is in a satisfactory position.\n2. **Nasogastric tube**: Tip projecting below the diaphragm, suggesting that it is correctly positioned for gastric decompression or feeding.\n3. **Right IJ (Internal Jugular) central line**: With tip in the SVC (Superior Vena Cava), indicating proper placement and function.\n\nNo other lines or tubes were mentioned in Report CXR_0019 [Source 3].\n\n**Image Analysis:** Although an image is not provided, based on the report's findings, I can infer that a chest radiograph (CXR) was taken to confirm the position of these tubes and lines. The report mentions bilateral basilar atelectasis but does not provide any information about pneumothorax.\n\nPlease note that this analysis is limited to the information provided in Report CXR_0019 [Source 3] and may not be comprehensive or up-to-date.",
+      "ground_truth": "Report CXR_0019 shows three devices: (1) an endotracheal tube with tip approximately 3 cm above the carina in satisfactory position, (2) a nasogastric tube with tip projecting below the diaphragm, and (3) a right IJ central line with tip in the SVC. All are in satisfactory position.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0011",
+        "CXR_0019"
+      ],
+      "relevant_uids": [
+        "CXR_0019"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q39",
+      "question": "Where is the central venous catheter tip in report CXR_0015?",
+      "category": "procedural",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered a definitive diagnosis or treatment plan. Consult a qualified medical professional for personalized advice.\n\nBased on the retrieved references, the central venous catheter tip in report CXR_0015 is located at the cavoatrial junction ([Source 1: Report CXR_0015 (impression)], [Source 2: Report CXR_0015 (findings)]). This information can be confirmed by analyzing the radiology reports, which specifically mention that the catheter tip \"projects over the cavoatrial junction\" ([Source 2: Report CXR_0015 (findings)]).\n\n**Image Analysis:** Although no actual image is provided for review, based on the report findings, it appears that the central venous catheter is properly positioned at the cavoatrial junction, which is a common site for central line placement.",
+      "ground_truth": "In report CXR_0015, the right internal jugular central venous catheter tip is projecting over the cavoatrial junction. No pneumothorax was noted post-placement.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0004"
+      ],
+      "relevant_uids": [
+        "CXR_0015"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "q40",
+      "question": "Is there a chest tube mentioned in the reports and what is its status?",
+      "category": "procedural",
+      "difficulty": "easy",
+      "answer": "**Medical Disclaimer:** This response is for educational/research purposes only and should not be considered as professional medical advice.\n\nBased on the retrieved references, I can provide information regarding the presence of a chest tube:\n\nA chest tube is mentioned in Report CXR_0013 (Source 2) with the following description: \"An enteric tube is present with the tip projecting over the stomach.\" However, this report does not specifically mention a chest tube.\n\nOn the other hand, Report CXR_0008 (Source 3) mentions a small residual right pneumothorax with a chest tube in place. This suggests that there was a chest tube inserted to manage the pneumothorax.\n\nTherefore, based on these reports, it appears that there is a mention of a chest tube in one report (CXR_0008), but not in another report (CXR_0013). The status of the chest tube is described as being in place in Report CXR_0008 to manage a small residual pneumothorax.\n\n**References:**\n\n[Source 2], [Source 3]",
+      "ground_truth": "Yes, report CXR_0008 describes a right chest tube in place following right thoracotomy. There is a small residual right pneumothorax with the chest tube in situ, along with subcutaneous emphysema in the right chest wall.",
+      "retrieved_uids": [
+        "CXR_0015",
+        "CXR_0013",
+        "CXR_0008"
+      ],
+      "relevant_uids": [
+        "CXR_0008"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    }
+  ]
+}

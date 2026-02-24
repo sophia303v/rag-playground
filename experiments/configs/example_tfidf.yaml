@@ -1,0 +1,5 @@
+# Experiment: TF-IDF embedding (fully offline, no model downloads)
+EMBEDDING_BACKEND: tfidf
+EMBEDDING_DIMENSION: 768
+TOP_K: 3
+GENERATION_BACKEND: ollama

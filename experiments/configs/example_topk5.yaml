@@ -1,0 +1,4 @@
+# Experiment: increase TOP_K to 5 for better recall
+TOP_K: 5
+EMBEDDING_BACKEND: sentence-transformers
+GENERATION_BACKEND: gemini

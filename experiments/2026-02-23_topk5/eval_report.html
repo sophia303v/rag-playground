@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Evaluation Report</title>
+<script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: #f5f7fa; color: #1a1a2e; padding: 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .subtitle { color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .card { background: #fff; border-radius: 12px; padding: 1.5rem;
+           box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .card h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #16213e; }
+  .full-width { grid-column: 1 / -1; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { background: #16213e; color: #fff; padding: 0.6rem 0.5rem; text-align: left;
+       position: sticky; top: 0; }
+  td { padding: 0.5rem; border-bottom: 1px solid #e8e8e8; }
+  tr:hover { background: #f0f4ff; }
+  .score-cell { text-align: center; font-weight: 600; border-radius: 4px; }
+  .score-high { background: #d4edda; color: #155724; }
+  .score-mid { background: #fff3cd; color: #856404; }
+  .score-low { background: #f8d7da; color: #721c24; }
+  .score-na { background: #e2e3e5; color: #6c757d; }
+  .stats { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .stat-box { background: #fff; border-radius: 10px; padding: 1rem 1.5rem;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; min-width: 140px; }
+  .stat-box .value { font-size: 1.6rem; font-weight: 700; color: #0f3460; }
+  .stat-box .label { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
+  .detail-scroll { max-height: 500px; overflow-y: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Medical Imaging RAG — Evaluation Report</h1>
+  <p class="subtitle">40 questions evaluated in 3551.3s</p>
+
+  <!-- Quick stats -->
+  <div class="stats">
+    
+    <div class="stat-box"><div class="value">0.45</div><div class="label">Overall Score</div></div>
+    <div class="stat-box"><div class="value">0.45</div><div class="label">Retrieval Quality</div></div>
+    <div class="stat-box"><div class="value">0.00</div><div class="label">Generation Quality</div></div>
+    <div class="stat-box"><div class="value">0.00</div><div class="label">Medical Judge</div></div>
+    <div class="stat-box"><div class="value">40</div><div class="label">Questions</div></div>
+    
+  </div>
+
+  <!-- Charts row -->
+  <div class="grid">
+    <div class="card">
+      <h2>Overall Metrics (Radar)</h2>
+      <div id="radar-chart"></div>
+    </div>
+    <div class="card">
+      <h2>Scores by Category</h2>
+      <div id="bar-chart"></div>
+    </div>
+  </div>
+
+  <!-- Summary table -->
+  <div class="card full-width" style="margin-bottom:1.5rem;">
+    <h2>Metric Summary</h2>
+    <table>
+      <tr><th>Metric</th><th>Mean</th><th>Min</th><th>Max</th><th>Count</th></tr>
+      <tr><td>Ctx Precision</td><td class='score-cell score-low'>0.22</td><td class='score-cell'>0.00</td><td class='score-cell'>0.67</td><td>40</td></tr>
+<tr><td>Ctx Recall</td><td class='score-cell score-mid'>0.69</td><td class='score-cell'>0.00</td><td class='score-cell'>1.00</td><td>40</td></tr>
+<tr><td>Faithfulness</td><td class='score-cell score-na'>N/A</td><td class='score-cell'>N/A</td><td class='score-cell'>N/A</td><td>0</td></tr>
+<tr><td>Relevancy</td><td class='score-cell score-na'>N/A</td><td class='score-cell'>N/A</td><td class='score-cell'>N/A</td><td>0</td></tr>
+<tr><td>Medical</td><td class='score-cell score-na'>N/A</td><td class='score-cell'>N/A</td><td class='score-cell'>N/A</td><td>0</td></tr>
+<tr><td>Citation</td><td class='score-cell score-na'>N/A</td><td class='score-cell'>N/A</td><td class='score-cell'>N/A</td><td>0</td></tr>
+<tr><td>Completeness</td><td class='score-cell score-na'>N/A</td><td class='score-cell'>N/A</td><td class='score-cell'>N/A</td><td>0</td></tr>
+    </table>
+  </div>
+
+  <!-- Detail table -->
+  <div class="card full-width">
+    <h2>Per-Question Results</h2>
+    <div class="detail-scroll">
+    <table>
+      <tr>
+        <th>ID</th><th>Category</th><th>Difficulty</th>
+        <th>Ctx Prec</th><th>Ctx Rec</th><th>Faith</th><th>Relev</th>
+        <th>Medical</th><th>Citation</th><th>Complete</th>
+      </tr>
+      <tr><td>q01</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q02</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q03</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q04</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q05</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q06</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q07</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.33</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q08</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q09</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q10</td><td>factual</td><td>easy</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q11</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q12</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q13</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q14</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q15</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.33</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q16</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q17</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q18</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q19</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q20</td><td>factual</td><td>medium</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q21</td><td>comparative</td><td>medium</td><td class='score-cell score-mid'>0.50</td><td class='score-cell score-mid'>0.67</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q22</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-mid'>0.50</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q23</td><td>comparative</td><td>medium</td><td class='score-cell score-mid'>0.67</td><td class='score-cell score-mid'>0.67</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q24</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-mid'>0.50</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q25</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-mid'>0.50</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q26</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q27</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-low'>0.33</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q28</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q29</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q30</td><td>comparative</td><td>medium</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q31</td><td>diagnostic</td><td>hard</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q32</td><td>diagnostic</td><td>hard</td><td class='score-cell score-low'>0.33</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q33</td><td>diagnostic</td><td>hard</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q34</td><td>diagnostic</td><td>hard</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q35</td><td>diagnostic</td><td>hard</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q36</td><td>procedural</td><td>easy</td><td class='score-cell score-mid'>0.67</td><td class='score-cell score-low'>0.33</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q37</td><td>procedural</td><td>easy</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-low'>0.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q38</td><td>procedural</td><td>easy</td><td class='score-cell score-low'>0.20</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q39</td><td>procedural</td><td>easy</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+<tr><td>q40</td><td>procedural</td><td>easy</td><td class='score-cell score-low'>0.25</td><td class='score-cell score-high'>1.00</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td><td class='score-cell score-na'>N/A</td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// Radar chart
+
+Plotly.newPlot('radar-chart', [{
+  type: 'scatterpolar',
+  r: [0.2158, 0.6937, 0, 0, 0, 0, 0, 0.2158],
+  theta: ["Ctx Precision", "Ctx Recall", "Faithfulness", "Relevancy", "Medical", "Citation", "Completeness", "Ctx Precision"],
+  fill: 'toself',
+  fillcolor: 'rgba(15,52,96,0.15)',
+  line: { color: '#0f3460', width: 2 },
+  marker: { size: 6, color: '#0f3460' }
+}], {
+  polar: {
+    radialaxis: { visible: true, range: [0, 1], tickvals: [0.2, 0.4, 0.6, 0.8, 1.0] }
+  },
+  margin: { t: 30, b: 30, l: 60, r: 60 },
+  height: 350,
+  showlegend: false
+}, { responsive: true });
+
+
+// Bar chart
+
+Plotly.newPlot('bar-chart', [{"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0.2217, 0.2567, 0.1883, 0.2733], "name": "Ctx Precision", "type": "bar", "marker": {"color": "#0f3460"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0.3417, 1.0, 0.8, 0.6667], "name": "Ctx Recall", "type": "bar", "marker": {"color": "#1a73e8"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0, 0, 0, 0], "name": "Faithfulness", "type": "bar", "marker": {"color": "#4CAF50"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0, 0, 0, 0], "name": "Relevancy", "type": "bar", "marker": {"color": "#FF9800"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0, 0, 0, 0], "name": "Medical", "type": "bar", "marker": {"color": "#9C27B0"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0, 0, 0, 0], "name": "Citation", "type": "bar", "marker": {"color": "#E91E63"}}, {"x": ["comparative", "diagnostic", "factual", "procedural"], "y": [0, 0, 0, 0], "name": "Completeness", "type": "bar", "marker": {"color": "#00BCD4"}}], {
+  barmode: 'group',
+  yaxis: { range: [0, 1], title: 'Score' },
+  xaxis: { title: 'Category' },
+  margin: { t: 30, b: 60, l: 50, r: 20 },
+  height: 350,
+  legend: { orientation: 'h', y: -0.25, x: 0.5, xanchor: 'center', font: { size: 10 } }
+}, { responsive: true });
+
+</script>
+</body>
+</html>

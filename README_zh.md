@@ -22,7 +22,8 @@
 
 | 功能 | 說明 |
 |---|---|
-| 多模態檢索 | 純文字問答 + 可選上傳胸部 X 光。影像會先經過 Gemini Vision 轉成文字描述，再與文字 query 合併送去做向量搜尋 |
+| 多模態檢索 | 純文字問答 + 可選上傳胸部 X 光。影像會先經過 Vision 後端轉成文字描述，再與文字 query 合併送去做向量搜尋 |
+| 雙重 Vision 後端 | Gemini Vision（雲端，品質最好）和 Ollama llava（本地，完全免費）。透過 `.env` 裡的 `VISION_BACKEND` 切換，含自動 fallback |
 | Section-based Chunking | 放射科報告有固定結構（indication / findings / impression），按這些自然段落切 chunk，而不是用固定 token 數硬切。好處是每個 chunk 語意完整，不會把一句話切斷 |
 | 雙重 Embedding 後端 | TF-IDF（離線開發，不需要 API key）和 Gemini `text-embedding-004`（正式環境，品質更好）。透過 `.env` 裡的 `EMBEDDING_BACKEND` 切換，不用改程式碼 |
 | ChromaDB 向量資料庫 | 內嵌式資料庫，cosine similarity 搜尋，資料持久化在 `data/chroma_db/`。不需要額外啟動服務 |
@@ -55,55 +56,11 @@ Gradio UI（`gr.themes.Soft()` 主題）在 port 7860，雙欄佈局：
 
 ### 查詢流程
 
-```
-使用者問題（+ 可選 X 光影像）
-        │
-        ▼
-┌─ retriever.py ─────────────────────────┐
-│  1. 有影像 → Gemini Vision 產生文字描述  │
-│  2. 文字 query → embedding 向量          │
-│  3. ChromaDB cosine search → top-K 結果  │
-└────────────────────────────────────────┘
-        │ top-5 相關文件 chunks
-        ▼
-┌─ generator.py ─────────────────────────┐
-│  System prompt 限制只能根據檢索結果回答   │
-│  Gemini 2.0 Flash 生成回答               │
-│  自動附上引用標記 + 免責聲明              │
-└────────────────────────────────────────┘
-        │
-        ▼
-    附引用來源的回答（Gradio UI 或 CLI）
-```
+![RAG Query Pipeline](assets/rag_query_pipeline.png)
 
 ### 資料處理流程（Ingestion，只需跑一次）
 
-```
-sample_reports.json（20 份報告）
-  或 HuggingFace OpenI 資料集
-        │
-        ▼
-┌─ data_loader.py ───────────────┐
-│  解析成 MedicalReport 物件      │
-│  過濾掉沒有 findings/impression │
-│  的空報告                       │
-└────────────────────────────────┘
-        │
-        ▼
-┌─ chunking.py ──────────────────┐
-│  每份報告 → 4 個 chunks:        │
-│  indication, findings,          │
-│  impression, full_text          │
-│  每個 chunk 帶 metadata         │
-│  (uid, section)                 │
-└────────────────────────────────┘
-        │
-        ▼
-┌─ vector_store.py ──────────────┐
-│  embedding → ChromaDB 儲存      │
-│  持久化到 data/chroma_db/       │
-└────────────────────────────────┘
-```
+![Data Ingestion Pipeline](assets/data_ingestion_pipeline.png)
 
 ---
 
@@ -207,8 +164,12 @@ EMBEDDING_BACKEND=gemini          # "local"（TF-IDF）或 "gemini"
 # Generation 後端（預設 gemini）
 GENERATION_BACKEND=gemini         # "gemini" 或 "ollama"
 
-# Ollama 設定（僅 GENERATION_BACKEND=ollama 時需要）
-OLLAMA_MODEL=llama3.2:3b          # Ollama 模型名稱
+# Vision 後端（預設 gemini）
+VISION_BACKEND=gemini             # "gemini" 或 "ollama"
+
+# Ollama 設定（僅使用 ollama 後端時需要）
+OLLAMA_MODEL=llama3.2:3b          # Ollama 文字生成模型
+OLLAMA_VISION_MODEL=llava:7b      # Ollama 影像分析模型
 OLLAMA_BASE_URL=http://localhost:11434  # Ollama 伺服器位址
 ```
 
@@ -231,12 +192,15 @@ brew install ollama
 # 2. 啟動 Ollama 服務
 ollama serve
 
-# 3. 下載模型（約 2GB）
-ollama pull llama3.2:3b
+# 3. 下載模型
+ollama pull llama3.2:3b   # 文字生成（約 2GB）
+ollama pull llava:7b      # 影像分析（約 4.7GB，可選）
 
 # 4. 設定 .env
 GENERATION_BACKEND=ollama
 OLLAMA_MODEL=llama3.2:3b
+VISION_BACKEND=ollama          # 影像分析也用 Ollama（可選）
+OLLAMA_VISION_MODEL=llava:7b
 ```
 
 Ollama 透過 REST API 通訊（`http://localhost:11434/api/generate`），不需要安裝額外的 Python 套件。
@@ -281,6 +245,8 @@ python run_eval.py --quiet
 ---
 
 ## 評估系統
+
+![Evaluation System](assets/evaluation_system.png)
 
 ### 為什麼自己實作而不用 `ragas` library？
 
@@ -347,7 +313,7 @@ python run_eval.py --quiet
 | 自動 Fallback chain | 主要 → 備用 LLM → 本地純文字，確保永遠有回答 |
 | ChromaDB（內嵌式） | 不需要另外裝 Milvus / Pinecone，部署簡單 |
 | Ollama 用 REST API 而非 pip 套件 | 減少依賴，`requests` 本來就有用到 |
-| Gemini Vision 做影像轉文字 | 知識庫是純文字，影像必須先轉成文字才能做向量搜尋 |
+| Gemini / Ollama 雙 Vision 後端 | 知識庫是純文字，影像必須先轉成文字才能做向量搜尋。Gemini Vision 品質好，llava 本地免費 |
 | Temperature 0.3 | 醫療領域不能讓模型發揮創意 |
 | 自製 RAGAS 指標 | 避免 `ragas` 拉進 OpenAI / LangChain 依賴 |
 | Score -1.0 表示失敗 | 讓 pipeline 不會因為單一 API 錯誤就中斷 |

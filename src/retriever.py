@@ -1,11 +1,21 @@
 """Retrieval module: handles text and image queries."""
+import base64
+import io
 from dataclasses import dataclass
+
+import requests
 from PIL import Image
-from google import genai
 
 import config
 from src.embedding import get_client
 from src.vector_store import search
+
+
+_RADIOLOGY_PROMPT = (
+    "You are a radiologist. Describe the key findings in this medical image "
+    "in clinical terminology. Focus on abnormalities, anatomical structures, "
+    "and any notable observations. Be concise but thorough."
+)
 
 
 @dataclass
@@ -27,26 +37,58 @@ class RetrievalResult:
         return "\n\n".join(context_parts)
 
 
-def describe_image(image: Image.Image) -> str:
-    """
-    Use Gemini Vision to generate a medical description of an image.
-
-    This converts an image query into a text description that can be
-    used for vector search against the text-based knowledge base.
-    """
+def _describe_image_gemini(image: Image.Image) -> str:
+    """Use Gemini Vision to generate a medical description of an image."""
     client = get_client()
 
     response = client.models.generate_content(
         model=config.GEMINI_MODEL,
-        contents=[
-            "You are a radiologist. Describe the key findings in this medical image "
-            "in clinical terminology. Focus on abnormalities, anatomical structures, "
-            "and any notable observations. Be concise but thorough.",
-            image,
-        ],
+        contents=[_RADIOLOGY_PROMPT, image],
     )
 
     return response.text
+
+
+def _describe_image_ollama(image: Image.Image) -> str:
+    """Use Ollama vision model (e.g. llava) to describe a medical image."""
+    buf = io.BytesIO()
+    image.save(buf, format="PNG")
+    b64 = base64.b64encode(buf.getvalue()).decode()
+
+    resp = requests.post(
+        f"{config.OLLAMA_BASE_URL}/api/generate",
+        json={
+            "model": config.OLLAMA_VISION_MODEL,
+            "prompt": _RADIOLOGY_PROMPT,
+            "images": [b64],
+            "stream": False,
+            "options": {"temperature": 0.3},
+        },
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json()["response"]
+
+
+def describe_image(image: Image.Image) -> str:
+    """
+    Generate a medical description of an image using the configured vision backend.
+
+    Fallback: primary backend fails → try the other → return empty string.
+    """
+    backend = config.VISION_BACKEND
+    primary = _describe_image_ollama if backend == "ollama" else _describe_image_gemini
+    fallback = _describe_image_gemini if backend == "ollama" else _describe_image_ollama
+
+    try:
+        return primary(image)
+    except Exception as e:
+        print(f"{backend.title()} vision unavailable ({e}), trying fallback...")
+        try:
+            return fallback(image)
+        except Exception as e2:
+            print(f"All vision backends failed ({e2}), skipping image description.")
+            return ""
 
 
 def retrieve(query: str, image: Image.Image | None = None, top_k: int = None) -> RetrievalResult:
@@ -54,7 +96,7 @@ def retrieve(query: str, image: Image.Image | None = None, top_k: int = None) ->
     Retrieve relevant medical reports based on text query and optional image.
 
     For multimodal queries:
-    1. If image provided: generate description via Gemini Vision
+    1. If image provided: generate description via configured vision backend
     2. Combine text query + image description
     3. Search vector store for relevant reports
 
@@ -73,12 +115,15 @@ def retrieve(query: str, image: Image.Image | None = None, top_k: int = None) ->
 
     # If image is provided, generate a description
     if image is not None:
-        print("Generating image description with Gemini Vision...")
+        backend = config.VISION_BACKEND
+        print(f"Generating image description with {backend.title()} Vision...")
         image_description = describe_image(image)
-        print(f"Image description: {image_description[:200]}...")
-
-        # Combine text query with image description for richer retrieval
-        combined_query = f"{query}\n\nImage findings: {image_description}"
+        if image_description:
+            print(f"Image description: {image_description[:200]}...")
+            # Combine text query with image description for richer retrieval
+            combined_query = f"{query}\n\nImage findings: {image_description}"
+        else:
+            combined_query = query
     else:
         combined_query = query
 

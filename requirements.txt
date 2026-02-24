@@ -8,3 +8,5 @@ socksio>=1.0.0
 plotly>=5.0.0
 datasets>=2.0.0
 scikit-learn>=1.0.0
+sentence-transformers>=3.0.0
+pyyaml>=6.0

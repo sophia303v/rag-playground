@@ -76,17 +76,30 @@ def _generate_gemini(prompt: str, image: Image.Image | None = None) -> str:
     return response.text
 
 
-def _generate_ollama(prompt: str) -> str:
-    """Generate answer using a local Ollama model."""
+def _generate_ollama(prompt: str, image: Image.Image | None = None) -> str:
+    """Generate answer using a local Ollama model.
+
+    If an image is provided and VISION_BACKEND is "ollama", the image is sent
+    as base64 so that a multimodal model (e.g. llava) can incorporate it.
+    """
+    import base64, io
+
+    body: dict = {
+        "model": config.OLLAMA_MODEL,
+        "prompt": prompt,
+        "system": SYSTEM_PROMPT,
+        "stream": False,
+        "options": {"temperature": 0.3, "num_predict": 1024},
+    }
+
+    if image is not None and config.VISION_BACKEND == "ollama":
+        buf = io.BytesIO()
+        image.save(buf, format="PNG")
+        body["images"] = [base64.b64encode(buf.getvalue()).decode()]
+
     resp = requests.post(
         f"{config.OLLAMA_BASE_URL}/api/generate",
-        json={
-            "model": config.OLLAMA_MODEL,
-            "prompt": prompt,
-            "system": SYSTEM_PROMPT,
-            "stream": False,
-            "options": {"temperature": 0.3, "num_predict": 1024},
-        },
+        json=body,
         timeout=120,
     )
     resp.raise_for_status()
@@ -124,7 +137,7 @@ def generate_answer(
     backend = config.GENERATION_BACKEND
     try:
         if backend == "ollama":
-            answer = _generate_ollama(prompt)
+            answer = _generate_ollama(prompt, image)
         else:
             answer = _generate_gemini(prompt, image)
     except Exception as e:
@@ -134,7 +147,7 @@ def generate_answer(
             if backend == "ollama":
                 answer = _generate_gemini(prompt, image)
             else:
-                answer = _generate_ollama(prompt)
+                answer = _generate_ollama(prompt, image)
         except Exception as e2:
             print(f"All LLM backends failed ({e2}), using local fallback.")
             answer = _generate_local(prompt, retrieval)
