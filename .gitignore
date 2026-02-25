@@ -4,6 +4,7 @@ data/raw/
 data/squad_v2/
 data/scifact/
 data/radqa/
+data/openi/
 data/eval_results.json
 data/eval_report.html
 # Large benchmark eval results (2000 questions)

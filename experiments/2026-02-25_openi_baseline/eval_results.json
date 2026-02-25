@@ -1,0 +1,2428 @@
+{
+  "run_time_seconds": 0.23,
+  "num_questions": 86,
+  "aggregate_scores": {
+    "context_precision": {
+      "mean": 0.0853,
+      "min": 0.0,
+      "max": 0.5,
+      "count": 86
+    },
+    "context_recall": {
+      "mean": 0.2384,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 86
+    },
+    "reciprocal_rank": {
+      "mean": 0.2035,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 86
+    },
+    "ndcg": {
+      "mean": 0.2094,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 86
+    },
+    "faithfulness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "answer_relevancy": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "medical_appropriateness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "citation_accuracy": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    },
+    "answer_completeness": {
+      "mean": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "count": 0
+    }
+  },
+  "scores_by_category": {
+    "comparative": {
+      "context_precision": 0.0278,
+      "context_recall": 0.0417,
+      "reciprocal_rank": 0.0833,
+      "ndcg": 0.0511,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    },
+    "diagnostic": {
+      "context_precision": 0.2014,
+      "context_recall": 0.5833,
+      "reciprocal_rank": 0.4792,
+      "ndcg": 0.5055,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    },
+    "factual": {
+      "context_precision": 0.0433,
+      "context_recall": 0.12,
+      "reciprocal_rank": 0.1,
+      "ndcg": 0.1052,
+      "faithfulness": -1.0,
+      "answer_relevancy": -1.0,
+      "medical_appropriateness": -1.0,
+      "citation_accuracy": -1.0,
+      "answer_completeness": -1.0
+    }
+  },
+  "results": [
+    {
+      "question_id": "openi_000",
+      "question": "What is the size of the opacity observed in the left lower lung on the PA view?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The opacity is approximately 4 cm in size.",
+      "retrieved_uids": [
+        "126",
+        "2750",
+        "1169"
+      ],
+      "relevant_uids": [
+        "463"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_001",
+      "question": "Based on the impression, what is recommended for further evaluation of the mass in the left lower hemithorax?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "A CT of the chest is recommended for further evaluation of the approximately 4.8 cm mass in the left lower hemithorax.",
+      "retrieved_uids": [
+        "463",
+        "1571",
+        "1791"
+      ],
+      "relevant_uids": [
+        "463"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_002",
+      "question": "What are the possible causes of the patchy opacity in the left lung base?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The patchy opacity in the left lung base may be secondary to atelectasis and/or possible infiltrate.",
+      "retrieved_uids": [
+        "3813",
+        "2231",
+        "2886"
+      ],
+      "relevant_uids": [
+        "2415"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_003",
+      "question": "Is there evidence of emphysematous changes in the lungs?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Yes, underlying emphysematous changes are identified in the lungs.",
+      "retrieved_uids": [
+        "1056",
+        "1081",
+        "3618"
+      ],
+      "relevant_uids": [
+        "2415"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_004",
+      "question": "What finding is noted in the right lung base?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "There is right basilar opacity with associated blunting of the costophrenic XXXX seen on the lateral view. This may represent small pleural effusion, atelectasis, and/or consolidation.",
+      "retrieved_uids": [
+        "1693",
+        "2165",
+        "3813"
+      ],
+      "relevant_uids": [
+        "1725"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_005",
+      "question": "Is there evidence of pneumothorax in this study?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there is no pneumothorax.",
+      "retrieved_uids": [
+        "2831",
+        "1874",
+        "2448"
+      ],
+      "relevant_uids": [
+        "1725"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_006",
+      "question": "What is suspected regarding the cardiac silhouette?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Cardiomegaly is suspected, less XXXX pericardial effusion. Prior comparison studies would be helpful to confirm.",
+      "retrieved_uids": [
+        "3819",
+        "3932",
+        "1728"
+      ],
+      "relevant_uids": [
+        "1449"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_007",
+      "question": "Are there any acute bony findings reported in the radiology report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, the report states that there are no acute bony findings.",
+      "retrieved_uids": [
+        "1428",
+        "310",
+        "2588"
+      ],
+      "relevant_uids": [
+        "1449"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_008",
+      "question": "What is the impression regarding acute cardiopulmonary findings?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The impression is that there are no acute cardiopulmonary findings.",
+      "retrieved_uids": [
+        "2008",
+        "1409",
+        "2100"
+      ],
+      "relevant_uids": [
+        "525"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_009",
+      "question": "Describe the finding related to the right 9th rib.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "There is contour irregularity of the lateral right 9th rib of indeterminate age, which could indicate an acute fracture if findings localize to that region.",
+      "retrieved_uids": [
+        "3919",
+        "525",
+        "2046"
+      ],
+      "relevant_uids": [
+        "525"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_010",
+      "question": "What is the cardiothoracic ratio reported in the chest radiographs?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The cardiothoracic ratio is 16.2/24.7.",
+      "retrieved_uids": [
+        "1826",
+        "1811",
+        "3602"
+      ],
+      "relevant_uids": [
+        "313"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_011",
+      "question": "Describe the distribution and characteristics of the interstitial opacity observed in the lungs.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Diffuse coarse interstitial opacity is seen throughout the lungs with perihilar and lower lobe predominance.",
+      "retrieved_uids": [
+        "501",
+        "897",
+        "3238"
+      ],
+      "relevant_uids": [
+        "313"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_012",
+      "question": "What is the status of the right-sided central venous catheter?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The right-sided central venous catheter has been removed since the prior imaging.",
+      "retrieved_uids": [
+        "1326",
+        "1727",
+        "1936"
+      ],
+      "relevant_uids": [
+        "667"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_013",
+      "question": "Describe the findings related to the lungs.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The patient has low lung volumes, causing streaky bibasilar atelectasis and bronchovascular crowding. There is no pneumothorax.",
+      "retrieved_uids": [
+        "2762",
+        "1636",
+        "1376"
+      ],
+      "relevant_uids": [
+        "667"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_014",
+      "question": "What is the size of the nodule present within the right hilum?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "A 3.0 cm nodule is present within the right hilum.",
+      "retrieved_uids": [
+        "1640",
+        "728",
+        "689"
+      ],
+      "relevant_uids": [
+        "3182"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_015",
+      "question": "Is there evidence of aspiration noted in the report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there is no evidence of aspiration noted in the report.",
+      "retrieved_uids": [
+        "569",
+        "201",
+        "3833"
+      ],
+      "relevant_uids": [
+        "3182"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_016",
+      "question": "Where is the tip of the left subclavian central line located?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The tip of the left subclavian central line is at the upper SVC (Superior Vena Cava).",
+      "retrieved_uids": [
+        "1935",
+        "2062",
+        "733"
+      ],
+      "relevant_uids": [
+        "1240"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_017",
+      "question": "Describe the state of the left lower lobe consolidation and provide possible etiologies.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The left lower lobe consolidation is grossly stable. It is possibly infectious pneumonia and/or aspiration.",
+      "retrieved_uids": [
+        "2422",
+        "945",
+        "2547"
+      ],
+      "relevant_uids": [
+        "1240"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_018",
+      "question": "Where are the mild patchy airspace opacities located?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The mild patchy airspace opacities are located within the posterior aspect of the right upper lobe. These opacities are concerning for underlying pneumonia.",
+      "retrieved_uids": [
+        "2262",
+        "1059",
+        "57"
+      ],
+      "relevant_uids": [
+        "2761"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_019",
+      "question": "Is there evidence of pleural effusion or pneumothorax?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there is no evidence of associated pleural effusion or pneumothorax.",
+      "retrieved_uids": [
+        "2041",
+        "1938",
+        "734"
+      ],
+      "relevant_uids": [
+        "2761"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_020",
+      "question": "What type of fracture is present in the left humerus, and what is the displacement of the distal fragment?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The patient has an obliquely oriented left humeral neck fracture, transverse, with 5 mm displacement of the distal fragment.",
+      "retrieved_uids": [
+        "1929",
+        "2456",
+        "2631"
+      ],
+      "relevant_uids": [
+        "650"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_021",
+      "question": "Is there evidence of active tuberculosis according to the radiology report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there are no cavitary lung changes to suggest active tuberculosis.",
+      "retrieved_uids": [
+        "3765",
+        "2848",
+        "2538"
+      ],
+      "relevant_uids": [
+        "650"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_022",
+      "question": "What concerning finding is noted in the left subphrenic region?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "There is a left subphrenic crescentic lucency, which is concerning for pneumoperitoneum.",
+      "retrieved_uids": [
+        "182",
+        "2062",
+        "549"
+      ],
+      "relevant_uids": [
+        "423"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_023",
+      "question": "Describe the changes observed in the pleural effusions compared to the prior exam.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "There is an interval increase in size of the moderate to large bilateral pleural effusions with bibasilar atelectasis/airspace disease.",
+      "retrieved_uids": [
+        "2752",
+        "3846",
+        "635"
+      ],
+      "relevant_uids": [
+        "423"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_024",
+      "question": "What is the differential diagnosis for the lobulated opacity identified superior to the heart?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The lobulated opacity is possibly consistent with a tortuous/ectatic thoracic aorta versus an anterior mediastinal mass.",
+      "retrieved_uids": [
+        "139",
+        "1595",
+        "744"
+      ],
+      "relevant_uids": [
+        "139"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_025",
+      "question": "Describe the findings related to the lungs and hemidiaphragms.",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The lungs are hyperexpanded with flattening of the bilateral hemidiaphragms. There is no pneumothorax or pleural effusion.",
+      "retrieved_uids": [
+        "2179",
+        "1494",
+        "1893"
+      ],
+      "relevant_uids": [
+        "139"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_026",
+      "question": "What postsurgical changes are noted in the report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Postsurgical changes are noted in the mediastinum. Blunting of the lateral and posterior left costophrenic sulcus may represent residual postsurgical effusion or pleural-parenchymal scarring.",
+      "retrieved_uids": [
+        "701",
+        "1887",
+        "2442"
+      ],
+      "relevant_uids": [
+        "2974"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_027",
+      "question": "Is there any evidence of pneumothorax?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there is no demonstrable pneumothorax.",
+      "retrieved_uids": [
+        "2831",
+        "1122",
+        "337"
+      ],
+      "relevant_uids": [
+        "2974"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_028",
+      "question": "What are the findings in the right knee?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The right knee shows prior ligamentous repair, tricompartmental joint space narrowing, and marginal osteophyte formation which is severe in the medial compartment. There is no knee joint effusion, fractures, or dislocations.",
+      "retrieved_uids": [
+        "2451",
+        "3771"
+      ],
+      "relevant_uids": [
+        "2451"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_029",
+      "question": "Is there any acute cardiopulmonary finding in the chest?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there are no acute cardiopulmonary findings in the chest.",
+      "retrieved_uids": [
+        "629",
+        "2175",
+        "1677"
+      ],
+      "relevant_uids": [
+        "2451"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_030",
+      "question": "What is seen in the right lung base?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Pulmonary opacity is seen in the right lung base, which may indicate focal infiltrate.",
+      "retrieved_uids": [
+        "2165",
+        "3813",
+        "1693"
+      ],
+      "relevant_uids": [
+        "1952"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_031",
+      "question": "Are there any acute abnormalities of the visualized bony structures?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, the visualized bony structures reveal no acute abnormalities.",
+      "retrieved_uids": [
+        "1428",
+        "2538",
+        "1738"
+      ],
+      "relevant_uids": [
+        "1952"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_032",
+      "question": "What is the recommendation regarding the indeterminant small nodular opacities?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "XXXX is recommended given the history of malignancy.",
+      "retrieved_uids": [
+        "2750",
+        "961",
+        "2222"
+      ],
+      "relevant_uids": [
+        "2704"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_033",
+      "question": "Where are the small nodular opacities projecting?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The small nodular opacities are projecting over the right base in the right costophrenic sulcus, posterior right 9th rib and the anterior T10 vertebral body.",
+      "retrieved_uids": [
+        "961",
+        "2750",
+        "2467"
+      ],
+      "relevant_uids": [
+        "2704"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_034",
+      "question": "What is the primary finding in the lungs according to this report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The primary finding is diffuse increased bilateral pulmonary interstitial markings, consistent with pulmonary fibrosis, with relative sparing of the bilateral lung apices.",
+      "retrieved_uids": [
+        "1636",
+        "1376"
+      ],
+      "relevant_uids": [
+        "3676"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_035",
+      "question": "Are there any signs of pneumothorax or pleural effusion?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, pneumothorax or pleural effusion are not demonstrated in the report.",
+      "retrieved_uids": [
+        "2041",
+        "734",
+        "845"
+      ],
+      "relevant_uids": [
+        "3676"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_036",
+      "question": "What is noted regarding the right hemidiaphragm?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "There is eventration of the right hemidiaphragm.",
+      "retrieved_uids": [
+        "3571",
+        "2380",
+        "3110"
+      ],
+      "relevant_uids": [
+        "2380"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_037",
+      "question": "Is there any evidence of active disease according to the impression?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, there is no evidence of active disease.",
+      "retrieved_uids": [
+        "399",
+        "2384",
+        "3772"
+      ],
+      "relevant_uids": [
+        "2380"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_038",
+      "question": "What condition is suggested by the hyperexpanded lungs?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The hyperexpanded lungs suggest emphysema.",
+      "retrieved_uids": [
+        "197",
+        "1269",
+        "112"
+      ],
+      "relevant_uids": [
+        "3974"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_039",
+      "question": "Where is the patchy airspace disease located, and what is it suspected to be?",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Patchy airspace disease is present in the right middle lobe. It may represent pneumonia.",
+      "retrieved_uids": [
+        "2111",
+        "959",
+        "1909"
+      ],
+      "relevant_uids": [
+        "3974"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_040",
+      "question": "Where is the ill-defined airspace opacity located?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The ill-defined airspace opacity is located in the posterior left lower lobe.",
+      "retrieved_uids": [
+        "2262",
+        "1059",
+        "57"
+      ],
+      "relevant_uids": [
+        "1117"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_041",
+      "question": "What does the focal opacity in the right upper lobe suggest?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The focal opacity in the right upper lobe suggests scar and/or granulomatous calcification.",
+      "retrieved_uids": [
+        "2467",
+        "3292",
+        "3280"
+      ],
+      "relevant_uids": [
+        "1117"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_042",
+      "question": "What is noted in the spine according to the radiology report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Degenerative changes are noted in the spine.",
+      "retrieved_uids": [
+        "2168",
+        "1860",
+        "2487"
+      ],
+      "relevant_uids": [
+        "1884"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_043",
+      "question": "Describe the appearance of the lungs as stated in the report.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The lungs are described as clear and free of focal airspace disease. No pleural effusion or pneumothorax is noted.",
+      "retrieved_uids": [
+        "1636",
+        "1600",
+        "2724"
+      ],
+      "relevant_uids": [
+        "1884"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_044",
+      "question": "Describe the arthritic changes observed in the left hip.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The left hip shows near-complete obliteration of the joint space with severe subchondral sclerosis and cystic formation in both the superior acetabulum and superior aspect of the femoral head.",
+      "retrieved_uids": [
+        "451",
+        "910",
+        "3955"
+      ],
+      "relevant_uids": [
+        "451"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_045",
+      "question": "Is there evidence of acute pulmonary disease according to the report?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, the report indicates possible COPD but no acute pulmonary disease.",
+      "retrieved_uids": [
+        "2840",
+        "1447",
+        "1373"
+      ],
+      "relevant_uids": [
+        "451"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_046",
+      "question": "What findings are noted in the mediastinum?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "The report indicates calcified mediastinal lymph nodes are present.",
+      "retrieved_uids": [
+        "1954",
+        "1931",
+        "1903"
+      ],
+      "relevant_uids": [
+        "2708"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_047",
+      "question": "Does the report indicate any acute cardiopulmonary process?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No, the impression states there is no evidence of acute cardiopulmonary process and the chest has a stable appearance.",
+      "retrieved_uids": [
+        "3044",
+        "3028",
+        "3703"
+      ],
+      "relevant_uids": [
+        "2708"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_048",
+      "question": "Is there evidence of a pneumothorax in the right lung?",
+      "category": "factual",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "No definite pleural line of pneumothorax is visualized in the right lung, according to the report.",
+      "retrieved_uids": [
+        "2887",
+        "1021"
+      ],
+      "relevant_uids": [
+        "591"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_049",
+      "question": "Describe the findings related to the vertebral bodies in the report.",
+      "category": "factual",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The report indicates age-indeterminate wedging of several midthoracic vertebral bodies.",
+      "retrieved_uids": [
+        "1860",
+        "1399"
+      ],
+      "relevant_uids": [
+        "591"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_050",
+      "question": "What are the two primary diagnostic concerns raised in this report?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Haziness in the right lung apex and a questionable right middle lobe pulmonary nodule.",
+      "retrieved_uids": [
+        "1602",
+        "1985",
+        "2988"
+      ],
+      "relevant_uids": [
+        "1436"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_051",
+      "question": "Given the findings, what is the recommended next step to further evaluate the haziness in the right lung apex and the questionable nodule?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "XXXX chest would be useful for further evaluation.",
+      "retrieved_uids": [
+        "3735",
+        "1436",
+        "2031"
+      ],
+      "relevant_uids": [
+        "1436"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_052",
+      "question": "Based on the findings, what is the most clinically significant finding that requires immediate attention?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The moderate right-sided pneumothorax measuring approximately 3.3 cm in the right apex.",
+      "retrieved_uids": [
+        "3287",
+        "1052",
+        "2725"
+      ],
+      "relevant_uids": [
+        "3378"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_053",
+      "question": "Given the pneumothorax and rib fractures, what are some potential underlying causes or mechanisms that should be considered (though not explicitly stated in the report)?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "The report does not specify the cause. However, trauma is a likely etiology given the rib fractures and pneumothorax.",
+      "retrieved_uids": [
+        "3205",
+        "3",
+        "403"
+      ],
+      "relevant_uids": [
+        "3378"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_054",
+      "question": "What are the possible etiologies for the vague opacities noted in the right upper lobe?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The vague opacities in the right upper lobe may be related to overlying rib lesions or developing pulmonary nodules.",
+      "retrieved_uids": [
+        "2467",
+        "3292",
+        "3280"
+      ],
+      "relevant_uids": [
+        "1678"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_055",
+      "question": "Given the redemonstration of elevated right hemidiaphragm with associated basilar airspace disease and effusion, what are some potential underlying causes that should be considered in the differential diagnosis?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "The report does not explicitly state the potential underlying causes. However, it implies the findings are related to the indication of a transpleural biloma and loculated right effusion, suggesting complications from these conditions should be considered.",
+      "retrieved_uids": [
+        "1678",
+        "715",
+        "1064"
+      ],
+      "relevant_uids": [
+        "1678"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_056",
+      "question": "Given the retrocardiac soft tissue density containing air, what is the most likely diagnosis suggested by this report?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Hiatal hernia",
+      "retrieved_uids": [
+        "1003",
+        "2708"
+      ],
+      "relevant_uids": [
+        "1003"
+      ],
+      "scores": {
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_057",
+      "question": "Besides atelectasis, what other conditions could be considered in the differential diagnosis for the bandlike opacity in the left lung base?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "The report does not provide other differential diagnoses for the bandlike opacity.",
+      "retrieved_uids": [
+        "2372",
+        "535",
+        "3721"
+      ],
+      "relevant_uids": [
+        "1003"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_058",
+      "question": "What are the possible etiologies for the interstitial thickening observed in the lungs, as suggested by the report?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The interstitial thickening could be due to edema superimposed on emphysema, pneumonitis, or fibrosis.",
+      "retrieved_uids": [
+        "1471",
+        "27",
+        "2190"
+      ],
+      "relevant_uids": [
+        "1471"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_059",
+      "question": "Given the patient's history of smoking, dyspnea, and findings consistent with emphysema and interstitial thickening, what additional imaging modality might be considered, and why?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "A chest XXXX is suggested if warranted clinically given recent onset of dyspnea, presumably to further evaluate the interstitial thickening and rule out other potential causes of the patient's symptoms.",
+      "retrieved_uids": [
+        "1471",
+        "2613",
+        "192"
+      ],
+      "relevant_uids": [
+        "1471"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_060",
+      "question": "Given the patient's history of thyroid cancer, what is a possible etiology for the nodular opacity in the left upper lung that the radiologist considered?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Metastatic disease.",
+      "retrieved_uids": [
+        "564",
+        "1631",
+        "605"
+      ],
+      "relevant_uids": [
+        "564"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_061",
+      "question": "Besides infectious sequelae, what other pathology is included in the differential diagnosis for the rounded nodular opacity in the left upper lung, considering the patient's history?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "Metastatic disease.",
+      "retrieved_uids": [
+        "564",
+        "1631",
+        "3654"
+      ],
+      "relevant_uids": [
+        "564"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_062",
+      "question": "What is the clinical significance of the central venous catheter tip projecting over the right atrium?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The report indicates that the distal tip of the dual-lumen right internal jugular central venous catheter projects over the right atrium. While the report doesn't explicitly state the significance, malpositioning of the catheter tip in the right atrium can increase the risk of cardiac arrhythmias or perforation.",
+      "retrieved_uids": [
+        "733",
+        "3195",
+        "684"
+      ],
+      "relevant_uids": [
+        "733"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_063",
+      "question": "Given the stable right upper lung lucency, what further imaging is recommended to characterize it?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The report suggests that a CT chest may be helpful to further characterize the stable right upper lung lucency.",
+      "retrieved_uids": [
+        "277",
+        "1988",
+        "549"
+      ],
+      "relevant_uids": [
+        "733"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_064",
+      "question": "What are the possible etiologies for the vague nodular opacity observed in the right upper lobe?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The vague nodular opacity could represent focal infiltrate or a lung nodule.",
+      "retrieved_uids": [
+        "3303",
+        "2467",
+        "1475"
+      ],
+      "relevant_uids": [
+        "3303"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_065",
+      "question": "Given the finding of a vague nodular opacity, what is the recommended next step in management?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Followup to resolution is recommended.",
+      "retrieved_uids": [
+        "605",
+        "2750",
+        "3303"
+      ],
+      "relevant_uids": [
+        "3303"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_066",
+      "question": "Based on the findings, what is the most likely etiology of the pulmonary nodules?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Metastases",
+      "retrieved_uids": [
+        "2031",
+        "2528",
+        "2783"
+      ],
+      "relevant_uids": [
+        "3855"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_067",
+      "question": "What is the clinical significance of the elevated left hemidiaphragm in the context of the other findings?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "Possibly from splinting, which could be related to pain or underlying pulmonary process.",
+      "retrieved_uids": [
+        "2380",
+        "1089",
+        "3110"
+      ],
+      "relevant_uids": [
+        "3855"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_068",
+      "question": "Given the irregular opacities in the left lung apex, what is a differential diagnosis that the radiologist is considering?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "The radiologist is considering a cavitary lesion in the left lung apex.",
+      "retrieved_uids": [
+        "2231",
+        "126",
+        "4"
+      ],
+      "relevant_uids": [
+        "4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_069",
+      "question": "Why is a short interval follow-up radiograph or CT thorax recommended in this case?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "A short interval follow-up radiograph or CT thorax is recommended because the opacities in the bilateral upper lobes could represent scarring, but the absence of a comparison exam necessitates further investigation to document resolution and rule out other potential etiologies.",
+      "retrieved_uids": [
+        "836",
+        "1027",
+        "310"
+      ],
+      "relevant_uids": [
+        "4"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_070",
+      "question": "Given the interval worsening of bilateral pulmonary interstitial markings, what is the most likely explanation according to the report?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Slight interval worsening of the patient's known interstitial lung disease.",
+      "retrieved_uids": [
+        "41",
+        "2070",
+        "409"
+      ],
+      "relevant_uids": [
+        "41"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_071",
+      "question": "Besides interstitial lung disease, what other potential diagnoses should be considered given the finding of increased bilateral pulmonary interstitial markings, especially considering the patient's history of idiopathic pulmonary fibrosis?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "The report does not explicitly mention other potential diagnoses. It focuses on the worsening of the known interstitial lung disease.",
+      "retrieved_uids": [
+        "409",
+        "2158",
+        "41"
+      ],
+      "relevant_uids": [
+        "41"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_072",
+      "question": "Given the patient's history and findings, what is a likely etiology for the left lower lobe airspace disease and bilateral pleural effusions?",
+      "category": "diagnostic",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Inhalational injury is suggested as a possible cause.",
+      "retrieved_uids": [
+        "2716",
+        "145",
+        "2370"
+      ],
+      "relevant_uids": [
+        "25"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_073",
+      "question": "Besides inhalational injury, what other differential diagnoses should be considered for the left lower lobe airspace disease and bilateral pleural effusions, given the patient's history of smoking and emphysema?",
+      "category": "diagnostic",
+      "difficulty": "hard",
+      "answer": "",
+      "ground_truth": "The report does not explicitly state other differential diagnoses, but pneumonia, congestive heart failure, or malignancy could be considered in the context of smoking history and emphysema.",
+      "retrieved_uids": [
+        "25",
+        "2716",
+        "2370"
+      ],
+      "relevant_uids": [
+        "25"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_074",
+      "question": "How does the description of the right lung base differ between report 1501 and report 3611?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1501 describes consolidation and atelectasis in the right lung base, while report 3611 describes mild right basilar airspace disease which may represent atelectasis versus infiltrate.",
+      "retrieved_uids": [
+        "2165",
+        "1439",
+        "3813"
+      ],
+      "relevant_uids": [
+        "1501",
+        "3611"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_075",
+      "question": "Do reports 1501 and 3608 mention pleural effusion? If so, what are the findings?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1501 states that there are no pleural air collections. Report 3608 states that there is no pleural effusion.",
+      "retrieved_uids": [
+        "2752",
+        "635",
+        "3846"
+      ],
+      "relevant_uids": [
+        "1501",
+        "3608"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_076",
+      "question": "How do the findings regarding pleural effusions differ between reports 3608, 2502, and 1704?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 3608 states there is no pleural effusion. Report 2502 describes small bilateral pleural effusions. Report 1704 describes a moderate to large left pleural fluid collection.",
+      "retrieved_uids": [
+        "2752",
+        "635",
+        "3846"
+      ],
+      "relevant_uids": [
+        "3608",
+        "2502",
+        "1704"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_077",
+      "question": "How do the reports 3608 and 2502 differ in their assessment of heart size?",
+      "category": "comparative",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Report 3608 indicates the heart is enlarged, with a possible pericardial effusion. Report 2502 states the heart is not significantly enlarged.",
+      "retrieved_uids": [
+        "320",
+        "3114",
+        "3505"
+      ],
+      "relevant_uids": [
+        "3608",
+        "2502"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_078",
+      "question": "How does the presence of pleural effusion in report 1704 compare to report 2338?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1704 describes a moderate-to-large left pleural effusion, while report 2338 states that no definite pleural effusions are identified.",
+      "retrieved_uids": [
+        "3846",
+        "2752",
+        "2548"
+      ],
+      "relevant_uids": [
+        "1704",
+        "2338"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_079",
+      "question": "How do the findings related to airspace opacities compare between reports 1704 and 2338?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1704 describes areas of airspace opacity within the left lung base, while report 2338 describes significant improvement in bilateral airspace opacities with only minimal streaky opacities remaining.",
+      "retrieved_uids": [
+        "2262",
+        "1059",
+        "2733"
+      ],
+      "relevant_uids": [
+        "1704",
+        "2338"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_080",
+      "question": "Report 2222 describes a round opacity in the posterior mediastinum. Are there any similar findings in the mediastinum described in reports 1525 or 1095?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1095 states that the mediastinal contours appear normal. Report 1525 mentions left-sided cardiomediastinal contours are obscured by collapse of the left lung, but does not describe any specific opacity.",
+      "retrieved_uids": [
+        "1567",
+        "3956",
+        "126"
+      ],
+      "relevant_uids": [
+        "2222",
+        "1525",
+        "1095"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_081",
+      "question": "How do the lung findings in report 2222 compare to those in report 1525?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 2222 states the lungs are clear bilaterally. Report 1525 describes a large left hydropneumothorax, complete collapse of the left lung, and increased interstitial opacities within the right lung, with possible apical cavitation.",
+      "retrieved_uids": [
+        "1600",
+        "2528",
+        "1376"
+      ],
+      "relevant_uids": [
+        "2222",
+        "1525"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_082",
+      "question": "How do the findings regarding vertebral fractures compare between report 1095 and report 541?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1095 describes multiple acute fractures involving upper thoracic and a single upper lumbar vertebral body, along with a severe kyphotic deformity. Report 541 describes a mild, age-indeterminate anterior wedging of a lower thoracic or upper lumbar vertebra.",
+      "retrieved_uids": [
+        "960",
+        "398",
+        "1216"
+      ],
+      "relevant_uids": [
+        "1095",
+        "541"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_083",
+      "question": "Do reports 1095 and 1608 agree on the presence of pleural effusion?",
+      "category": "comparative",
+      "difficulty": "easy",
+      "answer": "",
+      "ground_truth": "Report 1095 states the pleural spaces appear clear. Report 1608 states there is no pleural effusion.",
+      "retrieved_uids": [
+        "3846",
+        "2752",
+        "2548"
+      ],
+      "relevant_uids": [
+        "1095",
+        "1608"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_084",
+      "question": "Do reports 1608 and 1695 identify any pulmonary nodules or granulomas? If so, what are the findings?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1608 states that no definite pulmonary nodules are seen. Report 1695 identifies a calcified granuloma in the left lung base.",
+      "retrieved_uids": [
+        "1608",
+        "2031",
+        "517"
+      ],
+      "relevant_uids": [
+        "1608",
+        "1695"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 0.5,
+        "reciprocal_rank": 1.0,
+        "ndcg": 0.6131,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "openi_085",
+      "question": "How do the findings regarding pleural effusion compare between reports 1608 and 1076?",
+      "category": "comparative",
+      "difficulty": "medium",
+      "answer": "",
+      "ground_truth": "Report 1608 states there is no pleural effusion. Report 1076 suggests there may be small bilateral pleural effusions.",
+      "retrieved_uids": [
+        "3846",
+        "2752",
+        "635"
+      ],
+      "relevant_uids": [
+        "1608",
+        "1076"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "medical_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    }
+  ]
+}
