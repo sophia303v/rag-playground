@@ -28,6 +28,7 @@ from src.evaluation.metrics import (
     answer_relevancy,
 )
 from src.evaluation.llm_judge import JudgeResult, judge_answer
+from src.evaluation.combined_eval import combined_eval
 
 
 @dataclass
@@ -157,11 +158,52 @@ def _extract_uids(metadatas: list[dict]) -> list[str]:
     return uids
 
 
+def _load_checkpoint(checkpoint_path: Path) -> dict[str, dict]:
+    """Load checkpoint file, returning {question_id: result_dict}."""
+    if not checkpoint_path.exists():
+        return {}
+    with open(checkpoint_path) as f:
+        data = json.load(f)
+    return {r["question_id"]: r for r in data}
+
+
+def _save_checkpoint(checkpoint_path: Path, results: list[QuestionResult]):
+    """Save current results to checkpoint file."""
+    checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(checkpoint_path, "w") as f:
+        json.dump([r.to_dict() for r in results], f)
+
+
+def _result_from_dict(d: dict) -> QuestionResult:
+    """Reconstruct a QuestionResult from a checkpoint dict."""
+    scores = d.get("scores", {})
+    return QuestionResult(
+        question_id=d["question_id"],
+        question=d["question"],
+        category=d.get("category", "unknown"),
+        difficulty=d.get("difficulty", "unknown"),
+        answer=d.get("answer", ""),
+        ground_truth=d.get("ground_truth", ""),
+        retrieved_uids=d.get("retrieved_uids", []),
+        relevant_uids=d.get("relevant_uids", []),
+        context_precision=scores.get("context_precision", -1.0),
+        context_recall=scores.get("context_recall", -1.0),
+        reciprocal_rank=scores.get("reciprocal_rank", -1.0),
+        ndcg=scores.get("ndcg", -1.0),
+        faithfulness=scores.get("faithfulness", -1.0),
+        answer_relevancy=scores.get("answer_relevancy", -1.0),
+        domain_appropriateness=scores.get("domain_appropriateness", -1.0),
+        citation_accuracy=scores.get("citation_accuracy", -1.0),
+        answer_completeness=scores.get("answer_completeness", -1.0),
+    )
+
+
 def run_evaluation(
     golden_qa_path: Path | None = None,
     use_llm_metrics: bool = True,
     verbose: bool = True,
     max_samples: int | None = None,
+    checkpoint_dir: Path | None = None,
 ) -> EvaluationReport:
     """
     Run full evaluation on the golden QA dataset.
@@ -173,6 +215,8 @@ def run_evaluation(
                          run retrieval metrics without an API key.
         verbose: Print progress
         max_samples: Limit to first N questions (None = all)
+        checkpoint_dir: Directory for checkpoint file. If set, saves progress
+                        after each question and resumes from last checkpoint.
 
     Returns:
         EvaluationReport with all results
@@ -198,7 +242,20 @@ def run_evaluation(
             print("No index found. Running ingestion...")
         rag.ingest()
 
+    # Load checkpoint if available
+    checkpoint_path = checkpoint_dir / "checkpoint.json" if checkpoint_dir else None
+    completed = {}
+    if checkpoint_path:
+        completed = _load_checkpoint(checkpoint_path)
+        if completed and verbose:
+            print(f"Resuming from checkpoint: {len(completed)} questions already done.")
+
     report = EvaluationReport()
+    # Restore previously completed results (in order)
+    for qa in qa_pairs:
+        if qa["id"] in completed:
+            report.results.append(_result_from_dict(completed[qa["id"]]))
+
     start_time = time.time()
 
     # --- Batch embed all queries upfront for speed ---
@@ -221,10 +278,15 @@ def run_evaluation(
         if verbose:
             print("BM25 hybrid retrieval enabled.")
 
-    pbar = tqdm(qa_pairs, desc="Evaluating", disable=not verbose)
+    skipped = len(completed)
+    pbar = tqdm(qa_pairs, desc="Evaluating", disable=not verbose, initial=skipped)
     for i, qa in enumerate(pbar):
         qid = qa["id"]
         question = qa["question"]
+
+        # Skip already-completed questions
+        if qid in completed:
+            continue
         ground_truth = qa["ground_truth_answer"]
         relevant_uids = qa.get("relevant_report_uids", [])
         category = qa.get("category", "unknown")
@@ -315,21 +377,19 @@ def run_evaluation(
             except Exception as e:
                 answer = f"[Generation failed: {e}]"
 
-            # Run faithfulness, relevancy, and judge concurrently
-            with ThreadPoolExecutor(max_workers=3) as pool:
-                f_faith = pool.submit(faithfulness, question, answer, context_text)
-                f_rel = pool.submit(answer_relevancy, question, answer)
-                f_judge = pool.submit(judge_answer, question, answer, ground_truth, context_text)
+            # Single combined LLM call for all 5 metrics
+            eval_result = combined_eval(
+                question=question,
+                answer=answer,
+                ground_truth=ground_truth,
+                context=context_text,
+            )
 
-                faith = f_faith.result()
-                relevancy = f_rel.result()
-                judge = f_judge.result()
-
-            faith_score = faith.score
-            relevancy_score = relevancy.score
-            med_approp = judge.domain_appropriateness
-            cite_acc = judge.citation_accuracy
-            completeness = judge.answer_completeness
+            faith_score = eval_result.faithfulness
+            relevancy_score = eval_result.answer_relevancy
+            med_approp = eval_result.domain_appropriateness
+            cite_acc = eval_result.citation_accuracy
+            completeness = eval_result.answer_completeness
 
         result = QuestionResult(
             question_id=qid,
@@ -351,6 +411,10 @@ def run_evaluation(
             answer_completeness=completeness,
         )
         report.results.append(result)
+
+        # Save checkpoint after each question
+        if checkpoint_path:
+            _save_checkpoint(checkpoint_path, report.results)
 
     report.run_time_seconds = time.time() - start_time
 

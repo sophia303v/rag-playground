@@ -148,6 +148,48 @@ judge_prompt: |
     "explanation": "<brief justification covering all three criteria>"
   }}
 
+combined_eval_prompt: |
+  You are a senior radiologist evaluating an AI medical assistant's answer. Evaluate the AI ANSWER on ALL five criteria below in a single assessment.
+
+  QUESTION:
+  {question}
+
+  GROUND TRUTH (reference answer):
+  {ground_truth}
+
+  AI ANSWER:
+  {answer}
+
+  RETRIEVED CONTEXT:
+  {context}
+
+  Score each criterion from 0.0 to 1.0:
+
+  1. **Faithfulness**: Is every factual claim in the answer supported by the context?
+     - 1.0: Every claim is supported  - 0.5: Mix of supported/unsupported  - 0.0: Contradicts context or fabricated
+
+  2. **Answer Relevancy**: Does the answer directly address the question?
+     - 1.0: Directly and completely addresses the question  - 0.5: Partially addresses  - 0.0: Completely irrelevant
+
+  3. **Domain Appropriateness**: Does the answer use correct medical terminology? Is it clinically accurate?
+     - 1.0: Excellent terminology and clinical accuracy  - 0.5: Minor issues  - 0.0: Seriously incorrect medical information
+
+  4. **Citation Accuracy**: Does the answer cite sources (e.g., [Source 1], report UIDs)? Do citations match context?
+     - 1.0: All claims properly cited  - 0.5: Incomplete citations  - 0.0: No or wrong citations
+
+  5. **Answer Completeness**: Does the answer cover key points from the ground truth?
+     - 1.0: All key points covered  - 0.5: Some missing  - 0.0: Major points missing
+
+  Respond in JSON format only:
+  {{
+    "faithfulness": <float>,
+    "answer_relevancy": <float>,
+    "domain_appropriateness": <float>,
+    "citation_accuracy": <float>,
+    "answer_completeness": <float>,
+    "explanation": "<brief justification covering all five criteria>"
+  }}
+
 # --- QA Generation Prompts ---
 
 factual_qa_prompt: |

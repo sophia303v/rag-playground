@@ -176,12 +176,13 @@ def main():
         print("Set GEMINI_API_KEY in .env for full evaluation (faithfulness, relevancy, LLM judge).\n")
         use_llm = False
 
-    # Run evaluation
+    # Run evaluation (checkpoint_dir = output_dir for resume support)
     report = run_evaluation(
         golden_qa_path=qa_path,
         use_llm_metrics=use_llm,
         verbose=not args.quiet,
         max_samples=args.max_samples,
+        checkpoint_dir=output_dir,
     )
 
     # Save results
