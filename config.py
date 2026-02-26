@@ -13,7 +13,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 DATASET_NAME = os.getenv("DATASET_NAME", "openi_synthetic")
 DATASET_DIR = DATA_DIR / DATASET_NAME
-CHROMA_DIR = DATA_DIR / "chroma_db"
+CHROMA_DIR = DATA_DIR / DATASET_NAME / "chroma_db"
 MODELS_DIR = Path("/Users/sophia/Desktop/CV/models")
 EXPERIMENTS_DIR = PROJECT_ROOT / "experiments"
 
@@ -39,11 +39,20 @@ OLLAMA_VISION_MODEL = os.getenv("OLLAMA_VISION_MODEL", "llava:7b")
 # Available: "default" (domain-agnostic), "medical" (radiology-specific)
 PROMPT_TEMPLATE = os.getenv("PROMPT_TEMPLATE", "default")
 
+# Re-ranking
+RERANK_ENABLED = os.getenv("RERANK_ENABLED", "true").lower() == "true"
+CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+RERANK_CANDIDATES = 20
+
+# BM25 hybrid retrieval
+BM25_ENABLED = os.getenv("BM25_ENABLED", "true").lower() == "true"
+RRF_K = 60  # standard Reciprocal Rank Fusion constant
+
 # RAG Settings
 CHUNK_SIZE = 512          # tokens per chunk (approx)
 CHUNK_OVERLAP = 50        # overlap between chunks
 TOP_K = 3                 # number of retrieved documents
-COLLECTION_NAME = "medical_reports"
+COLLECTION_NAME = DATASET_NAME
 
 # Embedding
 EMBEDDING_DIMENSION = 384  # all-MiniLM-L12-v2 output dimension
@@ -73,6 +82,11 @@ EXPERIMENT_PARAMS = [
     "COLLECTION_NAME",
     "EMBEDDING_DIMENSION",
     "DATASET_NAME",
+    "RERANK_ENABLED",
+    "CROSS_ENCODER_MODEL",
+    "RERANK_CANDIDATES",
+    "BM25_ENABLED",
+    "RRF_K",
 ]
 
 
@@ -81,6 +95,8 @@ def set_dataset(name: str):
     this_module = sys.modules[__name__]
     this_module.DATASET_NAME = name
     this_module.DATASET_DIR = DATA_DIR / name
+    this_module.CHROMA_DIR = DATA_DIR / name / "chroma_db"
+    this_module.COLLECTION_NAME = name
     this_module.GOLDEN_QA_PATH = this_module.DATASET_DIR / "golden_qa.json"
 
 

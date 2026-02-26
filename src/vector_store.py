@@ -13,17 +13,23 @@ _chroma_client = None
 _chroma_collection = None
 
 
+_chroma_path = None
+
+
 def get_chroma_client() -> chromadb.PersistentClient:
-    """Get or create ChromaDB persistent client (cached)."""
-    global _chroma_client
-    if _chroma_client is None:
+    """Get or create ChromaDB persistent client (cached per dataset)."""
+    global _chroma_client, _chroma_collection, _chroma_path
+    current_path = str(config.CHROMA_DIR)
+    if _chroma_client is None or _chroma_path != current_path:
         config.CHROMA_DIR.mkdir(parents=True, exist_ok=True)
-        _chroma_client = chromadb.PersistentClient(path=str(config.CHROMA_DIR))
+        _chroma_client = chromadb.PersistentClient(path=current_path)
+        _chroma_collection = None  # reset collection when client changes
+        _chroma_path = current_path
     return _chroma_client
 
 
 def get_or_create_collection(client: chromadb.PersistentClient) -> chromadb.Collection:
-    """Get or create the medical reports collection (cached)."""
+    """Get or create the collection for the current dataset (cached)."""
     global _chroma_collection
     if _chroma_collection is None:
         _chroma_collection = client.get_or_create_collection(

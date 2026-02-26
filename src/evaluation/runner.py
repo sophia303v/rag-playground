@@ -16,7 +16,7 @@ import config
 from src.rag_pipeline import MedicalImagingRAG
 from src.embedding import embed_texts
 from src.vector_store import get_chroma_client, get_or_create_collection
-from src.retriever import RetrievalResult
+from src.retriever import RetrievalResult, _get_cross_encoder, _rrf_merge
 from src.generator import generate_answer
 from src.evaluation.metrics import (
     MetricResult,
@@ -86,12 +86,13 @@ class EvaluationReport:
     def aggregate_scores(self) -> dict[str, dict[str, float]]:
         """Compute mean, min, max for each metric across all questions."""
         metric_names = [
-            "context_precision", "context_recall", "reciprocal_rank", "ndcg",
+            "context_recall", "reciprocal_rank", "ndcg",
             "faithfulness", "answer_relevancy", "domain_appropriateness",
             "citation_accuracy", "answer_completeness",
         ]
+        secondary_metrics = ["context_precision"]
         agg = {}
-        for name in metric_names:
+        for name in metric_names + secondary_metrics:
             values = [
                 getattr(r, name) for r in self.results
                 if getattr(r, name) >= 0  # skip failed metrics (-1)
@@ -114,7 +115,7 @@ class EvaluationReport:
             categories.setdefault(r.category, []).append(r)
 
         metric_names = [
-            "context_precision", "context_recall", "reciprocal_rank", "ndcg",
+            "context_recall", "reciprocal_rank", "ndcg",
             "faithfulness", "answer_relevancy", "domain_appropriateness",
             "citation_accuracy", "answer_completeness",
         ]
@@ -212,6 +213,14 @@ def run_evaluation(
     client = get_chroma_client()
     collection = get_or_create_collection(client)
 
+    # Build BM25 index once if enabled
+    bm25 = None
+    if config.BM25_ENABLED:
+        from src.bm25_index import get_or_build_index
+        bm25 = get_or_build_index(collection)
+        if verbose:
+            print("BM25 hybrid retrieval enabled.")
+
     pbar = tqdm(qa_pairs, desc="Evaluating", disable=not verbose)
     for i, qa in enumerate(pbar):
         qid = qa["id"]
@@ -225,13 +234,43 @@ def run_evaluation(
 
         # Retrieve using pre-computed embedding
         try:
+            need_fusion = config.BM25_ENABLED or config.RERANK_ENABLED
+            n_fetch = max(config.RERANK_CANDIDATES, config.TOP_K) if need_fusion else config.TOP_K
             results = collection.query(
                 query_embeddings=[all_embeddings[i]],
-                n_results=config.TOP_K,
+                n_results=n_fetch,
                 include=["documents", "metadatas", "distances"],
             )
             documents = results["documents"][0] if results["documents"] else []
             metadatas = results["metadatas"][0] if results["metadatas"] else []
+            distances = results["distances"][0] if results["distances"] else []
+
+            # BM25 + RRF fusion
+            if config.BM25_ENABLED and bm25 is not None:
+                bm25_docs, bm25_metas, bm25_scores = bm25.search(question, n_results=n_fetch)
+                documents, metadatas, distances = _rrf_merge(
+                    documents, metadatas, distances,
+                    bm25_docs, bm25_metas, bm25_scores,
+                    k=config.RRF_K,
+                )
+
+            # Re-rank with cross-encoder
+            if config.RERANK_ENABLED and len(documents) > config.TOP_K:
+                ce = _get_cross_encoder()
+                pairs = [[question, doc] for doc in documents]
+                scores = ce.predict(pairs)
+                ranked = sorted(
+                    zip(scores, documents, metadatas, distances),
+                    key=lambda x: x[0],
+                    reverse=True,
+                )[:config.TOP_K]
+                _, documents, metadatas, distances = zip(*ranked)
+                documents, metadatas = list(documents), list(metadatas)
+            elif len(documents) > config.TOP_K:
+                documents = documents[:config.TOP_K]
+                metadatas = metadatas[:config.TOP_K]
+                distances = distances[:config.TOP_K]
+
             retrieved_uids = _extract_uids(metadatas)
 
             # Build context string
@@ -320,7 +359,15 @@ def run_evaluation(
         print(f"Evaluation complete in {report.run_time_seconds:.1f}s")
         print(f"{'='*60}")
         agg = report.aggregate_scores()
-        for name, stats in agg.items():
+        primary = [
+            "context_recall", "reciprocal_rank", "ndcg",
+            "faithfulness", "answer_relevancy", "domain_appropriateness",
+            "citation_accuracy", "answer_completeness",
+        ]
+        for name in primary:
+            if name not in agg:
+                continue
+            stats = agg[name]
             if stats["count"] > 0:
                 print(f"  {name:30s}  mean={stats['mean']:.3f}  "
                       f"min={stats['min']:.3f}  max={stats['max']:.3f}")
