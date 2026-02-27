@@ -35,6 +35,16 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 VISION_BACKEND = os.getenv("VISION_BACKEND", "gemini")
 OLLAMA_VISION_MODEL = os.getenv("OLLAMA_VISION_MODEL", "llava:7b")
 
+# Groq API (fast inference for evaluation)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_BASE_URL = "https://api.groq.com/openai/v1"
+
+# OpenRouter API (fallback for evaluation)
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.3-70b-instruct")
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
 # Prompt template: name of a YAML file under prompts/ (without .yaml extension)
 # Available: "default" (domain-agnostic), "medical" (radiology-specific)
 PROMPT_TEMPLATE = os.getenv("PROMPT_TEMPLATE", "default")

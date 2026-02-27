@@ -24,6 +24,69 @@ class CombinedEvalResult:
     explanation: str
 
 
+def _call_eval_llm(prompt: str) -> str:
+    """Call the best available LLM for evaluation.
+
+    Priority: Groq (fast, free) > Gemini > Ollama.
+    """
+    # Try Groq first (fastest, no throttle)
+    if config.GROQ_API_KEY:
+        resp = requests.post(
+            f"{config.GROQ_BASE_URL}/chat/completions",
+            headers={"Authorization": f"Bearer {config.GROQ_API_KEY}"},
+            json={
+                "model": config.GROQ_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.0,
+                "max_tokens": 512,
+            },
+            timeout=30,
+        )
+        resp.raise_for_status()
+        return resp.json()["choices"][0]["message"]["content"].strip()
+
+    # Try OpenRouter (OpenAI-compatible, wide model selection)
+    if config.OPENROUTER_API_KEY:
+        resp = requests.post(
+            f"{config.OPENROUTER_BASE_URL}/chat/completions",
+            headers={"Authorization": f"Bearer {config.OPENROUTER_API_KEY}"},
+            json={
+                "model": config.OPENROUTER_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.0,
+                "max_tokens": 512,
+            },
+            timeout=30,
+        )
+        resp.raise_for_status()
+        return resp.json()["choices"][0]["message"]["content"].strip()
+
+    # Fallback to Gemini
+    if config.GEMINI_API_KEY:
+        from src.embedding import get_client
+        client = get_client()
+        response = client.models.generate_content(
+            model=config.GEMINI_MODEL,
+            contents=[prompt],
+            config={"temperature": 0.0, "max_output_tokens": 512},
+        )
+        return response.text.strip()
+
+    # Fallback to Ollama
+    resp = requests.post(
+        f"{config.OLLAMA_BASE_URL}/api/generate",
+        json={
+            "model": config.OLLAMA_MODEL,
+            "prompt": prompt,
+            "stream": False,
+            "options": {"temperature": 0.0, "num_predict": 512},
+        },
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json()["response"].strip()
+
+
 def combined_eval(
     question: str,
     answer: str,
@@ -43,28 +106,7 @@ def combined_eval(
     )
 
     try:
-        if config.GENERATION_BACKEND == "ollama":
-            resp = requests.post(
-                f"{config.OLLAMA_BASE_URL}/api/generate",
-                json={
-                    "model": config.OLLAMA_MODEL,
-                    "prompt": prompt,
-                    "stream": False,
-                    "options": {"temperature": 0.0, "num_predict": 512},
-                },
-                timeout=120,
-            )
-            resp.raise_for_status()
-            text = resp.json()["response"].strip()
-        else:
-            from src.embedding import get_client
-            client = get_client()
-            response = client.models.generate_content(
-                model=config.GEMINI_MODEL,
-                contents=[prompt],
-                config={"temperature": 0.0, "max_output_tokens": 512},
-            )
-            text = response.text.strip()
+        text = _call_eval_llm(prompt)
 
         # Strip markdown code fences if present
         if text.startswith("```"):

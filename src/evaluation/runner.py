@@ -17,7 +17,7 @@ from src.rag_pipeline import MedicalImagingRAG
 from src.embedding import embed_texts
 from src.vector_store import get_chroma_client, get_or_create_collection
 from src.retriever import RetrievalResult, _get_cross_encoder, _rrf_merge
-from src.generator import generate_answer
+import requests
 from src.evaluation.metrics import (
     MetricResult,
     context_precision,
@@ -363,17 +363,18 @@ def run_evaluation(
         completeness = -1.0
 
         if use_llm_metrics:
-            # Generate answer using already-retrieved context (no re-embedding)
+            # Generate a concise answer for evaluation
             try:
-                retrieval = RetrievalResult(
-                    query=question,
-                    image_description=None,
-                    documents=documents,
-                    metadatas=metadatas,
-                    distances=[],
+                from src.prompt_loader import get as _get_prompt
+                from src.evaluation.combined_eval import _call_eval_llm
+                _eval_prompt = (
+                    _get_prompt("system_prompt")
+                    + "\nBe concise (1-3 sentences).\n\n"
+                    + _get_prompt("user_prompt").format(
+                        context=context_text, query=question,
+                    )
                 )
-                gen_result = generate_answer(retrieval)
-                answer = gen_result.answer
+                answer = _call_eval_llm(_eval_prompt)
             except Exception as e:
                 answer = f"[Generation failed: {e}]"
 
