@@ -1,0 +1,5484 @@
+{
+  "run_time_seconds": 234.09,
+  "num_questions": 200,
+  "aggregate_scores": {
+    "context_recall": {
+      "mean": 0.635,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 200
+    },
+    "reciprocal_rank": {
+      "mean": 0.555,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 200
+    },
+    "ndcg": {
+      "mean": 0.5757,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 200
+    },
+    "faithfulness": {
+      "mean": 0.9,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 10
+    },
+    "answer_relevancy": {
+      "mean": 0.7,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 10
+    },
+    "domain_appropriateness": {
+      "mean": 0.9,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 10
+    },
+    "citation_accuracy": {
+      "mean": 0.9,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 10
+    },
+    "answer_completeness": {
+      "mean": 0.65,
+      "min": 0.0,
+      "max": 1.0,
+      "count": 10
+    },
+    "context_precision": {
+      "mean": 0.2116,
+      "min": 0.0,
+      "max": 0.3333,
+      "count": 200
+    }
+  },
+  "scores_by_category": {
+    "squad_v2": {
+      "context_recall": 0.7143,
+      "reciprocal_rank": 0.619,
+      "ndcg": 0.6436,
+      "faithfulness": 0.8571,
+      "answer_relevancy": 0.6429,
+      "domain_appropriateness": 0.8571,
+      "citation_accuracy": 0.8571,
+      "answer_completeness": 0.6429
+    },
+    "unanswerable": {
+      "context_recall": 0.5688,
+      "reciprocal_rank": 0.5015,
+      "ndcg": 0.519,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8333,
+      "domain_appropriateness": 1.0,
+      "citation_accuracy": 1.0,
+      "answer_completeness": 0.6667
+    }
+  },
+  "results": [
+    {
+      "question_id": "sq_00000",
+      "question": "In what country is Normandy located?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "Normandy is located in France, as it was established by the treaty of Saint-Clair-sur-Epte between King Charles III of West Francia and the Viking ruler Rollo, and was situated in the former Frankish kingdom of Neustria [Source 1].",
+      "ground_truth": "France",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_a9395f5a",
+        "squad_645583ce"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00001",
+      "question": "When were the Normans in Normandy?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Normans were in Normandy from the 10th and 11th centuries, with their distinct cultural and ethnic identity emerging initially in the first half of the 10th century [Source 2]. By the time of the Norman Conquest of England in 1066, Normandy had already been established as a region with a functional hierarchical system [Source 3]. The Normans' presence in Normandy was a result of Norse raiders and pirates settling in the region under their leader Rollo [Source 2].",
+      "ground_truth": "10th and 11th centuries",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_4792c010",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00002",
+      "question": "From which countries did the Norse originate?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly state the countries of origin of the Norse people. [Source 1], [Source 2], and [Source 3] discuss the Normans and their interactions with France and England, but do not provide information on the Norse countries of origin.",
+      "ground_truth": "Denmark, Iceland and Norway",
+      "retrieved_uids": [
+        "squad_ea5f12ac",
+        "squad_3e5a2e4c",
+        "squad_80d1226c"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 0.0
+      }
+    },
+    {
+      "question_id": "sq_00003",
+      "question": "Who was the Norse leader?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly mention a specific Norse leader, but they do mention Rollo's Vikings [Source 3: Report squad_ea5f12ac] and Sweyn Forkbeard [Source 2: Report squad_3e5a2e4c], who was a Viking leader.",
+      "ground_truth": "Rollo",
+      "retrieved_uids": [
+        "squad_66a874ab",
+        "squad_3e5a2e4c",
+        "squad_ea5f12ac"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 0.5
+      }
+    },
+    {
+      "question_id": "sq_00004",
+      "question": "What century did the Normans first gain their separate identity?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Normans first gained their separate identity in the 10th century, as stated in [Source 1: Report squad_4792c010]. This distinct cultural and ethnic identity emerged initially in the first half of the 10th century and continued to evolve over the succeeding centuries. [Source 1: Report squad_4792c010] provides this information about the origins of the Normans.",
+      "ground_truth": "10th century",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_9cee0f58",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00005",
+      "question": "Who gave their name to Normandy in the 1000's and 1100's",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The Normans, descended from Norse raiders and pirates from Denmark, Iceland, and Norway, gave their name to Normandy in the 10th and 11th centuries [Source 1]. They were led by Rollo, who swore fealty to King Charles III of West Francia [Source 1]. The Normans' distinct cultural and ethnic identity emerged in the 10th century and continued to evolve over the succeeding centuries [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_80d1226c",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00006",
+      "question": "What is France a region of?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The provided reference documents do not contain information about France being a region of something. They discuss historical events related to France, such as the exodus of Huguenots and the French and Indian War, but do not describe France as a region of a larger area [Source 1], [Source 2], [Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_77e4b2ed",
+        "squad_2f53d401",
+        "squad_7c2707d8"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 0.0
+      }
+    },
+    {
+      "question_id": "sq_00007",
+      "question": "Who did King Charles III swear fealty to?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2afc7f85",
+        "squad_a2a5193f",
+        "squad_d2264862"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00008",
+      "question": "When did the Frankish identity emerge?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_9cee0f58",
+        "squad_4792c010",
+        "squad_5e406094"
+      ],
+      "relevant_uids": [
+        "squad_4792c010"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00009",
+      "question": "Who was the duke in the battle of Hastings?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "William the Conqueror",
+      "retrieved_uids": [
+        "squad_191cfc9b",
+        "squad_8655e3ae",
+        "squad_63b77a3c"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00010",
+      "question": "Who ruled the duchy of Normandy",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Richard I",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_191cfc9b",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00011",
+      "question": "What religion were the Normans",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Normans were Christians, specifically adhering to Catholic orthodoxy, as they assimilated into the Catholic Church [Source 1, Source 2]. They were also known for their religious zeal, participating in religious wars such as the Reconquista in Iberia [Source 3].",
+      "ground_truth": "Catholic",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_d3a62215",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00012",
+      "question": "What type of major impact did the Norman dynasty have on modern Europe?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d3a62215",
+        "squad_9cee0f58",
+        "squad_0faee097"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00013",
+      "question": "Who was famed for their Christian spirit?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly mention someone famed for their Christian spirit. However, [Source 2] discusses Charles W. Eliot, who was motivated by Transcendentalist Unitarian convictions, which were focused on the dignity and worth of human nature and the indwelling God in each person. [Source 1] also mentions a tradition of singing at Saint Evroul, a monastery, but it does not specifically mention someone famed for their Christian spirit.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_c6c63d41",
+        "squad_352a3a2e",
+        "squad_2d8b1125"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00014",
+      "question": "Who assimilted the Roman language?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_420e0b11",
+        "squad_1d619f83",
+        "squad_dab7ab4c"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00015",
+      "question": "Who ruled the country of Normandy?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_191cfc9b",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00016",
+      "question": "What principality did William the conquerer found?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_8d78e31f",
+        "squad_00dc2da9",
+        "squad_191cfc9b"
+      ],
+      "relevant_uids": [
+        "squad_d3a62215"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00017",
+      "question": "What is the original meaning of the word Norman?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Viking",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_8efe75b3",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_8efe75b3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00018",
+      "question": "When was the Latin version of the word Norman first recorded?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "9th century",
+      "retrieved_uids": [
+        "squad_1d619f83",
+        "squad_4792c010",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_8efe75b3"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00019",
+      "question": "What name comes from the English words Normans/Normanz?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The English name \"Normans\" comes from the French words Normans/Normanz, which is itself borrowed from Old Low Franconian Nortmann \"Northman\" or directly from Old Norse Nor\u00f0ma\u00f0r [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_8efe75b3",
+        "squad_4792c010",
+        "squad_1d619f83"
+      ],
+      "relevant_uids": [
+        "squad_8efe75b3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00020",
+      "question": "When was the French version of the word Norman first recorded?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_d3a62215",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_8efe75b3"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00021",
+      "question": "When was the Duchy of Normandy founded?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "911",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_191cfc9b",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00022",
+      "question": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "King Charles III",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_a9395f5a",
+        "squad_7c2707d8"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00023",
+      "question": "What river originally bounded the Duchy",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Seine",
+      "retrieved_uids": [
+        "squad_80d1226c",
+        "squad_8269df47",
+        "squad_e88e5508"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00024",
+      "question": "when did Nors encampments ivolve into destructive incursions?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The provided reference documents do not contain information about \"Nors encampments\" or their evolution into destructive incursions [Source 1, Source 2, Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_b6f99394",
+        "squad_547a01d8",
+        "squad_cfaae405"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00025",
+      "question": "What treaty was established in the 9th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_935b2f57",
+        "squad_80d1226c",
+        "squad_a0034bd2"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00026",
+      "question": "Who established a treaty with King Charles the third of France?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2afc7f85",
+        "squad_a0034bd2",
+        "squad_8655e3ae"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00027",
+      "question": "What did the French promises to protect Rollo and his men from?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_a9395f5a",
+        "squad_80d1226c",
+        "squad_cd0c0455"
+      ],
+      "relevant_uids": [
+        "squad_80d1226c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00028",
+      "question": "Who upon arriving gave the original viking settlers a common identity?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Rollo",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_a9395f5a",
+        "squad_4792c010"
+      ],
+      "relevant_uids": [
+        "squad_a9395f5a"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00029",
+      "question": "When did Rollo begin to arrive in Normandy?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_a9395f5a",
+        "squad_80d1226c",
+        "squad_cd0c0455"
+      ],
+      "relevant_uids": [
+        "squad_a9395f5a"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00030",
+      "question": "What Viking groups were conquered by Rollo?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 1: Report squad_a9395f5a], Rollo's contingents included Danes, Norwegians, Norse\u2013Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw under Norse control, indicating that these Viking groups were part of Rollo's forces rather than being conquered by him. [Source 1] does not mention any specific Viking groups being conquered by Rollo.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_a9395f5a",
+        "squad_ea5f12ac",
+        "squad_80d1226c"
+      ],
+      "relevant_uids": [
+        "squad_a9395f5a"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00031",
+      "question": "What was the Norman religion?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Catholicism",
+      "retrieved_uids": [
+        "squad_0a1a2bae",
+        "squad_4792c010",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_ea5f12ac"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00032",
+      "question": "What part of France were the Normans located?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "north",
+      "retrieved_uids": [
+        "squad_4792c010",
+        "squad_9cee0f58",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_ea5f12ac"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00033",
+      "question": "What was replace with the Norse religion?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_ea5f12ac",
+        "squad_04fd7d6d",
+        "squad_5e406094"
+      ],
+      "relevant_uids": [
+        "squad_ea5f12ac"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00034",
+      "question": "What did maternal Old Norse traditions merge with?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 1: Report squad_ea5f12ac], the maternal Frankish heritage merged with Old Norse traditions and customs to synthesize a unique \"Norman\" culture in the north of France.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_ea5f12ac",
+        "squad_04fd7d6d",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_ea5f12ac"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00035",
+      "question": "What language replaced the Gallo-Romance language?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_ea5f12ac",
+        "squad_1d619f83",
+        "squad_2ccde916"
+      ],
+      "relevant_uids": [
+        "squad_ea5f12ac"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00036",
+      "question": "What was one of the Norman's major exports?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "fighting horsemen",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_d3a62215",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_9cee0f58"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00037",
+      "question": "Who adopted the fuedel doctrines of the Normans?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_9cee0f58",
+        "squad_4792c010",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_9cee0f58"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00038",
+      "question": "What was one of the Norman's major imports?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_9cee0f58",
+        "squad_d3a62215"
+      ],
+      "relevant_uids": [
+        "squad_9cee0f58"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00039",
+      "question": "Who's arristocracy eventually served as avid Crusaders?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The Normans' aristocracy eventually served as avid Crusaders [Source 1: Report squad_bad292a9, Source 2: Report squad_0a1a2bae]. They participated in various religious wars, including the Reconquista in Iberia and the First Crusade, where they carved out a principality in Antioch [Source 1: Report squad_bad292a9, Source 2: Report squad_0a1a2bae].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_0a1a2bae",
+        "squad_2d11b29c"
+      ],
+      "relevant_uids": [
+        "squad_9cee0f58"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00040",
+      "question": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Seljuk Turks",
+      "retrieved_uids": [
+        "squad_18a78a6d",
+        "squad_1509abc4",
+        "squad_2d11b29c"
+      ],
+      "relevant_uids": [
+        "squad_18a78a6d"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00041",
+      "question": "Who entered Italy soon after the Byzantine Empire?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2a276d5c",
+        "squad_2d11b29c",
+        "squad_514ddc20"
+      ],
+      "relevant_uids": [
+        "squad_18a78a6d"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00042",
+      "question": "Who did the Normans fight in Italy?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_18a78a6d",
+        "squad_2d11b29c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_18a78a6d"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00043",
+      "question": "Who did the Normans encourage to come to the south?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not contain information about the Normans encouraging someone to come to the south. [Source 1], [Source 2], and [Source 3] discuss the Normans' history, origins, and military campaigns, but do not mention encouraging anyone to come to the south.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_4792c010",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_18a78a6d"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00044",
+      "question": "During what campaign did the Vargian and Lombard fight?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_18a78a6d",
+        "squad_2d11b29c",
+        "squad_299ebad4"
+      ],
+      "relevant_uids": [
+        "squad_18a78a6d"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00045",
+      "question": "When did Herve serve as a Byzantine general?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1050s",
+      "retrieved_uids": [
+        "squad_70bd6fb5",
+        "squad_2d11b29c",
+        "squad_2a276d5c"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00046",
+      "question": "When did Robert Crispin go up against the Turks?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The provided reference documents do not contain any information about Robert Crispin or his interactions with the Turks [Source 1, Source 2, Source 3].",
+      "ground_truth": "1060s",
+      "retrieved_uids": [
+        "squad_645583ce",
+        "squad_f653d4ec",
+        "squad_05c8f350"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00047",
+      "question": "Who ruined Roussel de Bailleul's plans for an independent state?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Alexius Komnenos",
+      "retrieved_uids": [
+        "squad_92ff5496",
+        "squad_efd3d59a",
+        "squad_82a49556"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00048",
+      "question": "Who was the first Byzantine mercenary to serve with the Normans?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_70bd6fb5",
+        "squad_18a78a6d",
+        "squad_2d11b29c"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00049",
+      "question": "When did Herve serve as a Norman general?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "Herv\u00e9 served as a Norman general in the 1050s, specifically as one of the first Norman mercenaries to serve as a Byzantine general [Source 1: Report squad_70bd6fb5].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_70bd6fb5",
+        "squad_3e5a2e4c",
+        "squad_191cfc9b"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00050",
+      "question": "Who ruined Alexius Komnenos plans for an independent state?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1cb5f2c3",
+        "squad_82a49556",
+        "squad_efd3d59a"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00051",
+      "question": "When did Herve go up against the Turks?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_5ae28dc0",
+        "squad_70bd6fb5"
+      ],
+      "relevant_uids": [
+        "squad_70bd6fb5"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00052",
+      "question": "What was the name of the Norman castle?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not specifically mention the name of a Norman castle [Source 1], [Source 2], [Source 3]. They do describe Norman architecture and its characteristics, such as rounded arches and massive proportions [Source 3].",
+      "ground_truth": "Afranji",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_3e5a2e4c",
+        "squad_0faee097"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00053",
+      "question": "Who was the leader when the Franks entered the Euphrates valley?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The leader when the Franks, also known as Normans, entered the upper Euphrates valley in northern Syria was a Norman named Oursel [Source 2]. Later, they were led by Raimbaud [Source 2].",
+      "ground_truth": "Oursel",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_1509abc4",
+        "squad_bad292a9"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00054",
+      "question": "Who did the Normans team up with in Anatolia?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Normans teamed up with the Turkish forces to aid in the destruction of the Armenians vassal-states of Sassoun and Taron in far eastern Anatolia [Source 1].",
+      "ground_truth": "Turkish forces",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_2d11b29c",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00055",
+      "question": "Who joined Norman forces in the destruction of the Armenians?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "Some Normans joined Turkish forces to aid in the destruction of the Armenians vassal-states of Sassoun and Taron in far eastern Anatolia [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_2d11b29c",
+        "squad_18a78a6d"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00056",
+      "question": "Who did the Turks take up service with?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to the provided reference documents, there is no information that the Turks took up service with anyone. However, it is mentioned that some Normans joined Turkish forces to aid in the destruction of the Armenians vassal-states [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_5ae28dc0",
+        "squad_70bd6fb5"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00057",
+      "question": "What Frank led Norman forces?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "A Norman named Oursel led a force of \"Franks\" into the upper Euphrates valley in northern Syria [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_9cee0f58",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00058",
+      "question": "Where did Oursel lead the Franks?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "Oursel, a Norman, led a force of \"Franks\" into the upper Euphrates valley in northern Syria [Source 1: Report squad_1509abc4].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1509abc4",
+        "squad_9cee0f58",
+        "squad_ac9bbd54"
+      ],
+      "relevant_uids": [
+        "squad_1509abc4"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00059",
+      "question": "What were the origins of the Raouliii family?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Norman mercenary",
+      "retrieved_uids": [
+        "squad_8b251481",
+        "squad_6d38fe3e",
+        "squad_500d6e4a"
+      ],
+      "relevant_uids": [
+        "squad_8b251481"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00060",
+      "question": "Where were several Norman mercenary familes originate from?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_18a78a6d",
+        "squad_4792c010",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_8b251481"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00061",
+      "question": "Who did the Normans serve under in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not specifically mention who the Normans served under in the 10th century. However, [Source 1] mentions that the Normans occupied important ports opposite England and had Viking brethren ravaging the English coasts, but it does not provide information on who they served under. [Source 2] and [Source 3] discuss the Normans' service in the 11th century, but not in the 10th century.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_9cee0f58",
+        "squad_18a78a6d"
+      ],
+      "relevant_uids": [
+        "squad_8b251481"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00062",
+      "question": "What expedition did George Maniaces lead in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The provided reference documents do not contain information about an expedition led by George Maniaces in the 10th century [Source 1, Source 2, Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_3f135fb7",
+        "squad_200d6328"
+      ],
+      "relevant_uids": [
+        "squad_8b251481"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00063",
+      "question": "What was the name of the count of Apulia ",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Robert Guiscard",
+      "retrieved_uids": [
+        "squad_2a276d5c",
+        "squad_d7a1a47e",
+        "squad_d193d700"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "domain_appropriateness": 0.0,
+        "citation_accuracy": 0.0,
+        "answer_completeness": 0.0
+      }
+    },
+    {
+      "question_id": "sq_00064",
+      "question": "When did Dyrrachium  fall to the Normans?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1082",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_3e5a2e4c",
+        "squad_514ddc20"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00065",
+      "question": "How many men were in Robert's army?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "There is no mention of Robert's army in the provided reference documents [Source 1], [Source 2], or [Source 3].",
+      "ground_truth": "30,000",
+      "retrieved_uids": [
+        "squad_8655e3ae",
+        "squad_f97c28d9",
+        "squad_76a12c7b"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00066",
+      "question": "Who ultimatly drove the Byzantines out of Europe?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_2a276d5c",
+        "squad_514ddc20"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00067",
+      "question": "What pope opposed Roberts campaign?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not contain information about a pope opposing Robert's campaign. [Source 1], [Source 2], and [Source 3] do not mention Robert's campaign or a pope's opposition to it.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_7d58d678",
+        "squad_0a1a2bae",
+        "squad_299ebad4"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "domain_appropriateness": 1.0,
+        "citation_accuracy": 1.0,
+        "answer_completeness": 1.0
+      }
+    },
+    {
+      "question_id": "sq_00068",
+      "question": "What fell to the Normans in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "Normandy, a region in France, fell to the Normans in the 10th century, as they were descended from Norse raiders and pirates who agreed to swear fealty to King Charles III of West Francia under their leader Rollo [Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_9cee0f58",
+        "squad_4792c010"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00069",
+      "question": "How many men did Roberts army face?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_a144f127",
+        "squad_d193d700",
+        "squad_76a12c7b"
+      ],
+      "relevant_uids": [
+        "squad_2a276d5c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00070",
+      "question": "Where did the Normans and Byzantines sign the peace treaty?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Deabolis",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_70bd6fb5",
+        "squad_18a78a6d"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00071",
+      "question": "Who was Robert's son?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Bohemond",
+      "retrieved_uids": [
+        "squad_8d78e31f",
+        "squad_d193d700",
+        "squad_381a3bc8"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00072",
+      "question": "What river was Petrela located by?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Deabolis",
+      "retrieved_uids": [
+        "squad_06d95049",
+        "squad_87b5cd17",
+        "squad_4b962b09"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00073",
+      "question": "Who did the Normans besiege in the 11th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_4792c010",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00074",
+      "question": "Who did Robert lead agains Dyrrachium in 1107?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not contain information about Robert leading against Dyrrachium in 1107 [Source 1], [Source 2], [Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d193d700",
+        "squad_92ff5496",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00075",
+      "question": "Who was Bohemond's son?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_d193d700",
+        "squad_0987df21"
+      ],
+      "relevant_uids": [
+        "squad_2d11b29c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00076",
+      "question": "When did the Normans attack Dyrrachium?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1185",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_514ddc20",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00077",
+      "question": "What was the naval base called?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Dyrrachium",
+      "retrieved_uids": [
+        "squad_cfaae405",
+        "squad_629a99c8",
+        "squad_076dbed3"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00078",
+      "question": "Where was Dyrrachium located?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly state the location of Dyrrachium, but based on the context, it can be inferred that Dyrrachium was located in the Adriatic region, possibly in present-day Albania or Greece [Source 1], as it is mentioned alongside other locations such as Valona and the river Deabolis, which are known to be in Albania [Source 2].",
+      "ground_truth": "the Adriatic",
+      "retrieved_uids": [
+        "squad_514ddc20",
+        "squad_2d11b29c",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00079",
+      "question": "Who attacked Dyrrachium in the 11th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_514ddc20",
+        "squad_2d11b29c",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00080",
+      "question": "Who betrayed the Normans?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_4792c010",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00081",
+      "question": "What naval base fell to the Normans?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_2d11b29c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_514ddc20"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00082",
+      "question": "Who did Emma Marry?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "King Ethelred II",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_8d78e31f",
+        "squad_381a3bc8"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00083",
+      "question": "Who was Emma's brother?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Duke Richard II",
+      "retrieved_uids": [
+        "squad_8d78e31f",
+        "squad_3e5a2e4c",
+        "squad_381a3bc8"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00084",
+      "question": "To where did Ethelred flee?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "Ethelred fled to Normandy in 1013, when he was forced from his kingdom by Sweyn Forkbeard [Source 1: Report squad_3e5a2e4c]. He stayed in Normandy until 1016 [Source 1: Report squad_3e5a2e4c].",
+      "ground_truth": "Normandy",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_d193d700",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00085",
+      "question": "Who kicked Ethelred out?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Sweyn Forkbeard",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_d193d700",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00086",
+      "question": "Who married Cnut the Great?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0987df21",
+        "squad_0bff19c9",
+        "squad_17a45c8b"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00087",
+      "question": "When did Richard II flee to Normandy?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_191cfc9b",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00088",
+      "question": "Who's major ports were controlled by the English?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 2: Report squad_7c2707d8], after France ceded its territory, the English controlled major ports, with France's colonial presence reduced to only the islands of Saint Pierre and Miquelon, implying English dominance in eastern North America. [Source 3: Report squad_cd0c0455] also mentions the British blockade of the French coast and a fleet at Halifax, Nova Scotia, suggesting English control of these ports.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_7c2707d8",
+        "squad_cd0c0455"
+      ],
+      "relevant_uids": [
+        "squad_3e5a2e4c"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00089",
+      "question": "Who was Edward the Confessor's half-brother?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Harthacnut",
+      "retrieved_uids": [
+        "squad_d2264862",
+        "squad_334a2ba3",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00090",
+      "question": "When did Edward return?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1041",
+      "retrieved_uids": [
+        "squad_d2264862",
+        "squad_8d78e31f",
+        "squad_76a12c7b"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00091",
+      "question": "Who did Edward make archbishop of Canterbury?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Robert of Jumi\u00e8ges",
+      "retrieved_uids": [
+        "squad_d2264862",
+        "squad_334a2ba3",
+        "squad_352a3a2e"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00092",
+      "question": "When did Edward the Confessor's son return from his fathers refuge?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 1: Report squad_d2264862], it was Edward the Confessor himself who returned from his father's refuge in 1041, not his son. There is no mention of Edward the Confessor having a son in the provided reference documents.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d2264862",
+        "squad_8d78e31f",
+        "squad_334a2ba3"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00093",
+      "question": "What kind of force did Harthacnut establish?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_ea111029",
+        "squad_57ecaa94",
+        "squad_ca0a0009"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00094",
+      "question": "Who made Robert of Jumieges earl of Hereford?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_334a2ba3",
+        "squad_d2264862",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_d2264862"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00095",
+      "question": "Where did Harold II die?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Battle of Hastings",
+      "retrieved_uids": [
+        "squad_191cfc9b",
+        "squad_3e5a2e4c",
+        "squad_0987df21"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00096",
+      "question": "Who killed Harold II? ",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "William II",
+      "retrieved_uids": [
+        "squad_191cfc9b",
+        "squad_3e5a2e4c",
+        "squad_0987df21"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00097",
+      "question": "When was the Battle of Hastings?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Battle of Hastings occurred in 1066, when Duke William II of Normandy conquered England, killing King Harold II [Source 2: Report squad_191cfc9b].",
+      "ground_truth": "1066",
+      "retrieved_uids": [
+        "squad_8655e3ae",
+        "squad_191cfc9b",
+        "squad_20b6aa21"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00098",
+      "question": "Who was the ruling class ahead of the Normans?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Anglo-Saxons",
+      "retrieved_uids": [
+        "squad_9cee0f58",
+        "squad_191cfc9b",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00099",
+      "question": "When did King Harold II conquer England?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_191cfc9b",
+        "squad_3e5a2e4c",
+        "squad_334a2ba3"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00100",
+      "question": "What battle took place in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_20b6aa21",
+        "squad_1aa3c69e",
+        "squad_2d11b29c"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00101",
+      "question": "Who replaced the Normans as the ruling class?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not mention anyone replacing the Normans as the ruling class. Instead, they state that the Normans replaced the Anglo-Saxons as the ruling class of England [Source 2].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_9cee0f58",
+        "squad_191cfc9b",
+        "squad_4792c010"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00102",
+      "question": "Who considered their land on the continent their most important holding?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0d6dbfce",
+        "squad_45d037e3",
+        "squad_a9fe095f"
+      ],
+      "relevant_uids": [
+        "squad_191cfc9b"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00103",
+      "question": "What was the Anglo-Norman language's final form?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Modern English",
+      "retrieved_uids": [
+        "squad_1d619f83",
+        "squad_d3a62215",
+        "squad_ea5f12ac"
+      ],
+      "relevant_uids": [
+        "squad_1d619f83"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00104",
+      "question": "Who identified themselves as French during the Hundred Years War?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_8ec4e694",
+        "squad_299ebad4",
+        "squad_20b6aa21"
+      ],
+      "relevant_uids": [
+        "squad_1d619f83"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00105",
+      "question": "What was absorbed into the Anglo-Norman language?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1d619f83",
+        "squad_d3a62215",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_1d619f83"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00106",
+      "question": "Who made fun of the Latin language?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 1: Report squad_1d619f83], Geoffrey Chaucer made fun of the Anglo-Norman language, not the Latin language, but it is mentioned in the context of the Latin language. There is no mention of someone making fun of the Latin language itself in the provided reference documents.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1d619f83",
+        "squad_ea5f12ac",
+        "squad_4fbce1bc"
+      ],
+      "relevant_uids": [
+        "squad_1d619f83"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00107",
+      "question": "In what year did the Norman's invade at Bannow Bay?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1169",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_2d11b29c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00108",
+      "question": "What country did the Normans invade in 1169?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Ireland",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_2d11b29c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00109",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Irish",
+      "retrieved_uids": [
+        "squad_1951f220",
+        "squad_4792c010",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00110",
+      "question": "Where did the Normans invade in the 11th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2d11b29c",
+        "squad_3e5a2e4c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00111",
+      "question": "Who did the Irish culture have a profound effect on?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1951f220",
+        "squad_dec62610",
+        "squad_e1ec4a62"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00112",
+      "question": "What castles were built by the Irish?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "According to [Source 1: Report squad_1951f220], the Normans, not the native Irish, built many fine castles and settlements, including Trim Castle and Dublin Castle, after their invasion of Ireland in 1169. There is no mention in the provided reference documents of castles built specifically by the Irish.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1951f220",
+        "squad_dec62610",
+        "squad_e1ec4a62"
+      ],
+      "relevant_uids": [
+        "squad_1951f220"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00113",
+      "question": "Who was Margaret's brother?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Edgar",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_4b962b09",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00114",
+      "question": "Who was Margaret's husband?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "King Malcolm III of Scotland",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_00dc2da9",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00115",
+      "question": "When was Scotland invaded by William?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1072",
+      "retrieved_uids": [
+        "squad_8d78e31f",
+        "squad_334a2ba3",
+        "squad_381a3bc8"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00116",
+      "question": "Who was the hostage?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Duncan",
+      "retrieved_uids": [
+        "squad_8f41d054",
+        "squad_92ff5496",
+        "squad_645583ce"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00117",
+      "question": "Who did Edgar marry?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not mention Edgar's marriage. They only mention that King Malcolm III of Scotland married Edgar's sister Margaret [Source 1].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_8d78e31f",
+        "squad_3e5a2e4c",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00118",
+      "question": "Who invaded Scotland in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_381a3bc8",
+        "squad_8d78e31f",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00119",
+      "question": "Who did the Scotish king take hostage?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d193d700",
+        "squad_8d78e31f",
+        "squad_2afc7f85"
+      ],
+      "relevant_uids": [
+        "squad_8d78e31f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00120",
+      "question": "Who did Alexander I marry?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Sybilla of Normandy",
+      "retrieved_uids": [
+        "squad_991f3bc4",
+        "squad_eaf1dc9d",
+        "squad_381a3bc8"
+      ],
+      "relevant_uids": [
+        "squad_381a3bc8"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00121",
+      "question": "What culture's arrival in Scotland is know as the \"Davidian Revolution\"?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Norman",
+      "retrieved_uids": [
+        "squad_381a3bc8",
+        "squad_b9871995",
+        "squad_61ffc7bf"
+      ],
+      "relevant_uids": [
+        "squad_381a3bc8"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00122",
+      "question": "Who did King David I of Scotland Marry?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly state who King David I of Scotland married. [Source 1] only mentions that his elder brother Alexander I was married to Sybilla of Normandy, and his sister Maud of Scotland was married to Henry I of England. It does not provide information about King David I's spouse. [Source 2] and [Source 3] also do not mention King David I's marriage.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_381a3bc8",
+        "squad_8d78e31f",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_381a3bc8"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00123",
+      "question": "What did Sybilla of Normandy introduce to Scotland?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_381a3bc8",
+        "squad_3e5a2e4c",
+        "squad_b9871995"
+      ],
+      "relevant_uids": [
+        "squad_381a3bc8"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00124",
+      "question": "Where was Ralph earl of?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Hereford",
+      "retrieved_uids": [
+        "squad_334a2ba3",
+        "squad_d2264862",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_334a2ba3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00125",
+      "question": "Who was Ralph in charge of being at war with?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "the Welsh",
+      "retrieved_uids": [
+        "squad_334a2ba3",
+        "squad_8d78e31f",
+        "squad_d7a1a47e"
+      ],
+      "relevant_uids": [
+        "squad_334a2ba3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00126",
+      "question": "Who made Ralph earl?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "Edward the Confessor made Ralph earl of Hereford, as stated in [Source 1: Report squad_334a2ba3] and [Source 2: Report squad_d2264862].",
+      "ground_truth": "Edward the Confessor",
+      "retrieved_uids": [
+        "squad_334a2ba3",
+        "squad_d2264862",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_334a2ba3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00127",
+      "question": "Who came into contact with Wales after the conquest of England?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_334a2ba3",
+        "squad_00dc2da9",
+        "squad_191cfc9b"
+      ],
+      "relevant_uids": [
+        "squad_334a2ba3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00128",
+      "question": "Who made Edward the Confessor Earl?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d2264862",
+        "squad_334a2ba3",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_334a2ba3"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00129",
+      "question": "What country was under the control of Norman barons?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Wales",
+      "retrieved_uids": [
+        "squad_00dc2da9",
+        "squad_191cfc9b",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_00dc2da9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00130",
+      "question": "What came under Williams dominace before the conquest?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "There is no information in the provided reference documents about someone named Williams or what came under their dominance before a conquest [Source 1, Source 2, Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_66daf938",
+        "squad_1aa3c69e",
+        "squad_da7c94c4"
+      ],
+      "relevant_uids": [
+        "squad_00dc2da9"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00131",
+      "question": "What Welsh lords did William conquer?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_00dc2da9",
+        "squad_334a2ba3",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_00dc2da9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00132",
+      "question": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1018",
+      "retrieved_uids": [
+        "squad_645583ce",
+        "squad_ecb859d9",
+        "squad_b1a99e23"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00133",
+      "question": "Who was in charge of the papal army in the War of Barbastro?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "William of Montreuil",
+      "retrieved_uids": [
+        "squad_299ebad4",
+        "squad_2a276d5c",
+        "squad_0a1a2bae"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00134",
+      "question": "Where did the Normans carve out a principality before the First Crusade?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0a1a2bae",
+        "squad_2d11b29c",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00135",
+      "question": "What did the Normans take part in in the 10th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The Normans, descended from Norse raiders and pirates, took part in ravaging the English coasts and occupied important ports opposite England across the English Channel in the 10th century [Source 1]. They also began to merge with the native Frankish and Roman-Gaulish populations, forming a distinct cultural and ethnic identity [Source 3]. Additionally, they adopted feudal doctrines and developed a hierarchical system [Source 2].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_3e5a2e4c",
+        "squad_9cee0f58",
+        "squad_4792c010"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00136",
+      "question": "Who carved out a state for himself from Moorish lands?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0a1a2bae",
+        "squad_2d11b29c",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00137",
+      "question": "What war occured in the 1oth century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_20b6aa21",
+        "squad_299ebad4",
+        "squad_a0034bd2"
+      ],
+      "relevant_uids": [
+        "squad_0a1a2bae"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00138",
+      "question": "When did the Siege of Antioch take place?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1097",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_2d11b29c",
+        "squad_20b6aa21"
+      ],
+      "relevant_uids": [
+        "squad_bad292a9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00139",
+      "question": "What was the name of Bohemond's nephew?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Tancred",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_d193d700",
+        "squad_0987df21"
+      ],
+      "relevant_uids": [
+        "squad_bad292a9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00140",
+      "question": "What major conquest did Tancred play a roll in?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "Tancred played a significant role in the conquest of Jerusalem [Source 1: Report squad_bad292a9]. He also worked for the expansion of the Crusader kingdom in Transjordan and the region of Galilee [Source 1: Report squad_bad292a9].",
+      "ground_truth": "Jerusalem",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_1aa3c69e",
+        "squad_d8a208b4"
+      ],
+      "relevant_uids": [
+        "squad_bad292a9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00141",
+      "question": "When did Tancred lay siege to Antioch?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_2d11b29c",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_bad292a9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00142",
+      "question": "What was the name of Tancred's nephew?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_bad292a9",
+        "squad_0987df21",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_bad292a9"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00143",
+      "question": "How long did Western Europe control Cyprus?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "380 years",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_5ae28dc0",
+        "squad_81bf4548"
+      ],
+      "relevant_uids": [
+        "squad_fe65fd4d"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00144",
+      "question": "Who defeated Anglo-Norman forces during the third Crusade?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0a1a2bae",
+        "squad_9cee0f58",
+        "squad_2d11b29c"
+      ],
+      "relevant_uids": [
+        "squad_fe65fd4d"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00145",
+      "question": "Who dominated Western Europe for 380 years?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not contain information about a specific entity dominating Western Europe for 380 years. However, [Source 1] mentions that the conquest of Cyprus by Anglo-Norman forces led to Western European domination of the island for 380 years, implying Western European forces dominated Cyprus, not Western Europe itself. [Source 1]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_e062424b",
+        "squad_73520b8e"
+      ],
+      "relevant_uids": [
+        "squad_fe65fd4d"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00146",
+      "question": "What ruined Richard's plans to reach Acre?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "a storm",
+      "retrieved_uids": [
+        "squad_682315fb",
+        "squad_334a2ba3",
+        "squad_d193d700"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00147",
+      "question": "Who was Richard's fiancee?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Berengaria",
+      "retrieved_uids": [
+        "squad_682315fb",
+        "squad_3e5a2e4c",
+        "squad_8d78e31f"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00148",
+      "question": "What year did the storm hit Richard's fleet?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "1191",
+      "retrieved_uids": [
+        "squad_682315fb",
+        "squad_da7c94c4",
+        "squad_cd0c0455"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00149",
+      "question": "Who ruled Cyprus in 1191?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "In 1191, Cyprus was ruled by Isaac Komnenos, the island's despot [Source 2: Report squad_682315fb]. He was in power until Richard the Lion-hearted arrived and took control of Limassol [Source 2: Report squad_682315fb]. This event marked the beginning of Western European domination of the island [Source 1: Report squad_fe65fd4d].",
+      "ground_truth": "Isaac Komnenos",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_682315fb",
+        "squad_1b4dc426"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00150",
+      "question": "Who left Messina in the 11th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_682315fb",
+        "squad_2a276d5c",
+        "squad_4537a6dd"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00151",
+      "question": "What year did Richards fleet avoid a storm?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_8655e3ae",
+        "squad_da7c94c4",
+        "squad_cd0c0455"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00152",
+      "question": "Who ruled Cyprus in the 11th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The provided reference documents do not contain information about who ruled Cyprus in the 11th century [Source 1, Source 2, Source 3]. The documents only discuss events related to the conquest of Cyprus by Anglo-Norman forces in the late 12th century, specifically in 1191 [Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_1b4dc426",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_682315fb"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.3333,
+        "ndcg": 0.5,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00153",
+      "question": "Who was Guy's Rival?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Conrad of Montferrat",
+      "retrieved_uids": [
+        "squad_2afc7f85",
+        "squad_d193d700",
+        "squad_a8f3b55c"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00154",
+      "question": "What were Isaac's chains made out of?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "silver",
+      "retrieved_uids": [
+        "squad_d193d700",
+        "squad_9cc95c6f",
+        "squad_6bc44b64"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00155",
+      "question": "Who led Richard's troops when Cyprus was conquered?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Guy de Lusignan",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_682315fb",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00156",
+      "question": "Who's chains were made out of copper?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_112ef0af",
+        "squad_114cb684",
+        "squad_05664bdb"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00157",
+      "question": "Who led Issacs troops to Cyprus?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not contain information about who led Isaac's troops to Cyprus. [Source 1], [Source 2], and [Source 3] do not mention Isaac or his troops in relation to Cyprus.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_fe65fd4d",
+        "squad_1aa3c69e",
+        "squad_1509abc4"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00158",
+      "question": "Who offered Issac his daughter?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_d193d700",
+        "squad_8d78e31f",
+        "squad_99c921b2"
+      ],
+      "relevant_uids": [
+        "squad_d193d700"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00159",
+      "question": "What continent are the Canarian Islands off the coast of?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Africa",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_06d95049",
+        "squad_d14cf425"
+      ],
+      "relevant_uids": [
+        "squad_1aa3c69e"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00160",
+      "question": "Who conquered the Canary Island in the 14th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The Canary Islands were conquered by the expedition led by Jean de Bethencourt and Gadifer de la Salle between 1402 and 1405 [Source 1]. Their troops were gathered in Normandy, Gascony, and later reinforced by Castilian colonists [Source 1]. Jean de Bethencourt took the title of King of the Canary Islands as a vassal to Henry III of Castile [Source 2].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_1b4dc426",
+        "squad_fe65fd4d"
+      ],
+      "relevant_uids": [
+        "squad_1aa3c69e"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00161",
+      "question": "What Islands are of the coast of Asia?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_06d95049",
+        "squad_a36313a4",
+        "squad_b9cfd7a4"
+      ],
+      "relevant_uids": [
+        "squad_1aa3c69e"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00162",
+      "question": "Who became the King of the Canary Islands?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Bethencourt",
+      "retrieved_uids": [
+        "squad_1b4dc426",
+        "squad_1aa3c69e",
+        "squad_d193d700"
+      ],
+      "relevant_uids": [
+        "squad_1b4dc426"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00163",
+      "question": "Who bought the rights?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Enrique P\u00e9rez de Guzm\u00e1n",
+      "retrieved_uids": [
+        "squad_8b79b2b8",
+        "squad_32f518c1",
+        "squad_21ac5168"
+      ],
+      "relevant_uids": [
+        "squad_1b4dc426"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00164",
+      "question": "Who sold the rights?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Maciot de Bethencourt",
+      "retrieved_uids": [
+        "squad_88325991",
+        "squad_32f518c1",
+        "squad_21ac5168"
+      ],
+      "relevant_uids": [
+        "squad_1b4dc426"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00165",
+      "question": "What title did Henry II take in the Canary Island?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not mention Henry II taking a title in the Canary Islands. According to [Source 1: Report squad_1b4dc426], it was Bethencourt who took the title of King of the Canary Islands, as vassal to Henry III of Castile, not Henry II.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1b4dc426",
+        "squad_1aa3c69e",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_1b4dc426"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00166",
+      "question": "Who sold the rights to the island in the 14th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_1aa3c69e",
+        "squad_1b4dc426",
+        "squad_682315fb"
+      ],
+      "relevant_uids": [
+        "squad_1b4dc426"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00167",
+      "question": "Where are Jersey and Guernsey",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Channel Islands",
+      "retrieved_uids": [
+        "squad_10960efe",
+        "squad_2f53d401",
+        "squad_767140fe"
+      ],
+      "relevant_uids": [
+        "squad_10960efe"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00168",
+      "question": "How many customaries does Norman customary law have?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "two",
+      "retrieved_uids": [
+        "squad_10960efe",
+        "squad_9cc95c6f",
+        "squad_591aa1a7"
+      ],
+      "relevant_uids": [
+        "squad_10960efe"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00169",
+      "question": "What Norman law wasdeveloped between 1000 and 1300?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The customary law of Normandy was developed between the 10th and 13th centuries, specifically between 1000 and 1300, and was transcribed in two customaries: the Tr\u00e8s ancien coutumier and the Grand coutumier de Normandie [Source 1]. This law survives today through the legal systems of Jersey and Guernsey in the Channel Islands [Source 1]. The Normans also adopted feudal doctrines from France during this period, incorporating them into their hierarchical system [Source 3].",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_10960efe",
+        "squad_3e5a2e4c",
+        "squad_9cee0f58"
+      ],
+      "relevant_uids": [
+        "squad_10960efe"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00170",
+      "question": "What law has 3 customeries?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_a30aad14",
+        "squad_9098c028",
+        "squad_1a07b15b"
+      ],
+      "relevant_uids": [
+        "squad_10960efe"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00171",
+      "question": "What was authored in the 12th century?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_591aa1a7",
+        "squad_79d14087",
+        "squad_db5e234c"
+      ],
+      "relevant_uids": [
+        "squad_10960efe"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00172",
+      "question": "What is the Norman architecture idiom?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Romanesque",
+      "retrieved_uids": [
+        "squad_0faee097",
+        "squad_e0ab9521",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_0faee097"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00173",
+      "question": "What kind of arches does Norman architecture have?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "Norman architecture is characterized by rounded arches, particularly over windows and doorways [Source 1: Report squad_0faee097].",
+      "ground_truth": "rounded",
+      "retrieved_uids": [
+        "squad_0faee097",
+        "squad_e0ab9521",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_0faee097"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00174",
+      "question": "What type of arch did the Normans invent?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_0faee097",
+        "squad_9cc95c6f",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_0faee097"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00175",
+      "question": "What architecture type came after Norman in England?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Early Gothic",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_0faee097",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00176",
+      "question": "What architecture type came before Norman in England?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Anglo-Saxon",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_0faee097",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00177",
+      "question": "What place had the Norman Arab architectural style?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The Kingdom of Sicily in southern Italy had the unique Norman-Arab architectural style, which incorporated elements of Islamic, Lombard, and Byzantine building techniques [Source 1].",
+      "ground_truth": "Sicily",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_0faee097",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00178",
+      "question": "What precedes the period of Anglo-Saxon architecture?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_0faee097",
+        "squad_1d619f83"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00179",
+      "question": "What architecture type came after Early Gothic?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_111fc83c",
+        "squad_0faee097"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00180",
+      "question": "Who incorperated Islamic, LOmbard, and Byzantine building techniques in England?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_e0ab9521",
+        "squad_9cc95c6f",
+        "squad_0faee097"
+      ],
+      "relevant_uids": [
+        "squad_e0ab9521"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00181",
+      "question": "When did the church reform begin?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "early 11th century",
+      "retrieved_uids": [
+        "squad_2206402e",
+        "squad_a2a5193f",
+        "squad_2ccde916"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00182",
+      "question": "Who used the church to unify themselves?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not explicitly state that a specific group used the church to unify themselves. However, [Source 1] mentions that the French Waldensians sought to join William Farel, Calvin, and the Reformation, which could be interpreted as an attempt to unify with other Protestant groups. [Source 1]",
+      "ground_truth": "dukes",
+      "retrieved_uids": [
+        "squad_2206402e",
+        "squad_352a3a2e",
+        "squad_e69d798e"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00183",
+      "question": "What kind of art did the Normans have a rich tradition of?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_591aa1a7",
+        "squad_9cc95c6f",
+        "squad_72d41c67"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00184",
+      "question": "Who began a program of church reform in the 1100s",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2206402e",
+        "squad_2ccde916",
+        "squad_a2a5193f"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00185",
+      "question": "Who was divided by the church?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_2206402e",
+        "squad_299ebad4",
+        "squad_e69d798e"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00186",
+      "question": "Who experienced aa golden age in the 1100s and 1200s",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "The reference documents do not specifically mention a \"golden age\" in the 1100s and 1200s. However, [Source 3: Report squad_bab25849] mentions that Buddhism, particularly Tibetan Buddhism, flourished during a certain period, but it does not specify the exact time frame as the 1100s and 1200s. [Source 1] and [Source 2] do not provide relevant information on this topic.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_150823b7",
+        "squad_73520b8e",
+        "squad_bab25849"
+      ],
+      "relevant_uids": [
+        "squad_591aa1a7"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00187",
+      "question": "When were the French wars of religion?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "16th century",
+      "retrieved_uids": [
+        "squad_299ebad4",
+        "squad_bae21493",
+        "squad_fb7ef29a"
+      ],
+      "relevant_uids": [
+        "squad_bae21493"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00188",
+      "question": "What wars did France fight in the 1600s?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_299ebad4",
+        "squad_20b6aa21",
+        "squad_8ec4e694"
+      ],
+      "relevant_uids": [
+        "squad_bae21493"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00189",
+      "question": "What revolution was fought in the 1899's?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_299ebad4",
+        "squad_146a75a2",
+        "squad_a0034bd2"
+      ],
+      "relevant_uids": [
+        "squad_bae21493"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00190",
+      "question": "What kind of needlework was used in the creation of the Bayeux Tapestry?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "embroidery",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_3f5e6b7f",
+        "squad_f67e8bb1"
+      ],
+      "relevant_uids": [
+        "squad_72d41c67"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00191",
+      "question": "What is Norman art's most well known piece?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "The most famous work of Norman art is the Bayeux Tapestry, which is actually a work of embroidery, not a tapestry [Source 1: Report squad_72d41c67].",
+      "ground_truth": "Bayeux Tapestry",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_9cc95c6f",
+        "squad_591aa1a7"
+      ],
+      "relevant_uids": [
+        "squad_72d41c67"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00192",
+      "question": "Who commissioned the Tapestry?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "Odo",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_3f5e6b7f",
+        "squad_9cc95c6f"
+      ],
+      "relevant_uids": [
+        "squad_72d41c67"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00193",
+      "question": "What is the oldest work of Norman art?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_9cc95c6f",
+        "squad_591aa1a7"
+      ],
+      "relevant_uids": [
+        "squad_72d41c67"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00194",
+      "question": "Who commissioned Danish vikings to create the Bayeux Tapestry?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_80d1226c",
+        "squad_3e5a2e4c"
+      ],
+      "relevant_uids": [
+        "squad_72d41c67"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00195",
+      "question": "What is the most important type of Norman art preserved in churches?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "mosaics",
+      "retrieved_uids": [
+        "squad_9cc95c6f",
+        "squad_591aa1a7",
+        "squad_72d41c67"
+      ],
+      "relevant_uids": [
+        "squad_9cc95c6f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00196",
+      "question": "How has British art survived in Normandy?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "British art has not survived in Normandy, but rather Norman art has survived in Britain, primarily as stonework or metalwork, such as capitals and baptismal fonts [Source 2]. There is no mention of British art surviving in Normandy in the provided reference documents.",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_72d41c67",
+        "squad_9cc95c6f",
+        "squad_591aa1a7"
+      ],
+      "relevant_uids": [
+        "squad_9cc95c6f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg": 0.6309,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00197",
+      "question": "What is the most common form of Norman art in churches?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_9cc95c6f",
+        "squad_591aa1a7",
+        "squad_72d41c67"
+      ],
+      "relevant_uids": [
+        "squad_9cc95c6f"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00198",
+      "question": "What was a centre of ivorywork in the 1100s?",
+      "category": "unanswerable",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "",
+      "retrieved_uids": [
+        "squad_b9cfd7a4",
+        "squad_591aa1a7",
+        "squad_1aa3c69e"
+      ],
+      "relevant_uids": [
+        "squad_9cc95c6f"
+      ],
+      "scores": {
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg": 0.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    },
+    {
+      "question_id": "sq_00199",
+      "question": "In what century did important classical music developments occur in Normandy?",
+      "category": "squad_v2",
+      "difficulty": "unknown",
+      "answer": "[Generation failed: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions]",
+      "ground_truth": "11th",
+      "retrieved_uids": [
+        "squad_6064098c",
+        "squad_80d1226c",
+        "squad_c6c63d41"
+      ],
+      "relevant_uids": [
+        "squad_6064098c"
+      ],
+      "scores": {
+        "context_precision": 0.3333,
+        "context_recall": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg": 1.0,
+        "faithfulness": -1.0,
+        "answer_relevancy": -1.0,
+        "domain_appropriateness": -1.0,
+        "citation_accuracy": -1.0,
+        "answer_completeness": -1.0
+      }
+    }
+  ]
+}
