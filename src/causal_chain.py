@@ -65,153 +65,55 @@ def _call_llm(system_prompt: str, user_prompt: str) -> str:
             raise RuntimeError(f"All LLM backends failed: {e2}") from e2
 
 
-def _parse_json_response(text: str) -> dict:
-    """Parse JSON from LLM response, stripping markdown fences if present."""
-    cleaned = text.strip()
-    if cleaned.startswith("```"):
-        # Remove markdown code fences
-        lines = cleaned.split("\n")
-        lines = [l for l in lines if not l.strip().startswith("```")]
-        cleaned = "\n".join(lines)
-    return json.loads(cleaned)
+def get_default_system_prompt() -> str:
+    """Return the default system prompt from YAML."""
+    return get_prompt("causal_chain_system_prompt")
 
 
-def extract_causal_chains(article: str) -> dict:
+def get_default_user_prompt() -> str:
+    """Return the default user prompt template from YAML."""
+    return get_prompt("causal_chain_extract_prompt")
+
+
+def extract_causal_chains(
+    article: str,
+    system_prompt: str | None = None,
+    user_prompt_template: str | None = None,
+) -> tuple[dict, str]:
     """
     Extract causal chains from an article.
 
     Args:
         article: The input article text.
+        system_prompt: Custom system prompt. Uses default if None.
+        user_prompt_template: Custom user prompt template with {article} placeholder.
+                              Uses default if None.
 
     Returns:
-        Dict with keys: causal_pairs, causal_chains, summary
+        Tuple of (parsed result dict, raw LLM response text)
     """
-    system_prompt = get_prompt("causal_chain_system_prompt")
-    user_prompt = get_prompt("causal_chain_extract_prompt").format(article=article)
+    sys_prompt = system_prompt or get_default_system_prompt()
+    usr_template = user_prompt_template or get_default_user_prompt()
 
-    raw_response = _call_llm(system_prompt, user_prompt)
+    # Build user prompt: substitute {article} if placeholder exists,
+    # otherwise append the article at the end.
+    if "{article}" in usr_template:
+        user_prompt = usr_template.format(article=article)
+    else:
+        user_prompt = usr_template + "\n\n" + article
 
+    raw_response = _call_llm(sys_prompt, user_prompt)
+
+    # Try to parse as JSON, but don't force it — the user's prompt
+    # might not ask for JSON output at all.
     try:
-        result = _parse_json_response(raw_response)
+        cleaned = raw_response.strip()
+        if cleaned.startswith("```"):
+            lines = cleaned.split("\n")
+            lines = [l for l in lines if not l.strip().startswith("```")]
+            cleaned = "\n".join(lines)
+        result = json.loads(cleaned)
     except (json.JSONDecodeError, ValueError):
-        # If JSON parsing fails, return the raw text wrapped in a structure
-        result = {
-            "causal_pairs": [],
-            "causal_chains": [],
-            "summary": raw_response,
-            "_parse_error": True,
-        }
+        result = None
 
-    return result
-
-
-def format_causal_pairs_table(result: dict) -> str:
-    """Format causal pairs as a Markdown table."""
-    if result.get("_parse_error"):
-        return f"**LLM returned non-JSON response:**\n\n{result['summary']}"
-
-    pairs = result.get("causal_pairs", [])
-    if not pairs:
-        return "*No causal pairs found.*"
-
-    lines = [
-        "| # | Cause | Effect | Confidence | Evidence |",
-        "|---|-------|--------|------------|----------|",
-    ]
-    for p in pairs:
-        pid = p.get("id", "")
-        cause = p.get("cause", "").replace("|", "\\|")
-        effect = p.get("effect", "").replace("|", "\\|")
-        conf = p.get("confidence", "")
-        evidence = p.get("evidence", "").replace("|", "\\|")
-        # Truncate long evidence for table readability
-        if len(evidence) > 80:
-            evidence = evidence[:77] + "..."
-        lines.append(f"| {pid} | {cause} | {effect} | {conf} | {evidence} |")
-
-    return "\n".join(lines)
-
-
-def format_chains_diagram(result: dict) -> str:
-    """Format causal chains as a text-based flow diagram."""
-    if result.get("_parse_error"):
-        return ""
-
-    chains = result.get("causal_chains", [])
-    if not chains:
-        return "*No multi-step causal chains identified.*"
-
-    lines = []
-    for i, chain_obj in enumerate(chains, 1):
-        nodes = chain_obj.get("chain", [])
-        desc = chain_obj.get("description", "")
-        arrow_chain = " → ".join(nodes)
-        lines.append(f"**Chain {i}:** {arrow_chain}")
-        if desc:
-            lines.append(f"  _{desc}_")
-        lines.append("")
-
-    return "\n".join(lines)
-
-
-def format_mermaid_diagram(result: dict) -> str:
-    """Format causal chains as a Mermaid flowchart for visualization."""
-    if result.get("_parse_error"):
-        return ""
-
-    pairs = result.get("causal_pairs", [])
-    if not pairs:
-        return ""
-
-    # Collect unique nodes and edges
-    node_ids: dict[str, str] = {}
-    edges: list[tuple[str, str, str]] = []
-
-    def _node_id(label: str) -> str:
-        if label not in node_ids:
-            node_ids[label] = f"N{len(node_ids)}"
-        return node_ids[label]
-
-    for p in pairs:
-        cause = p.get("cause", "")
-        effect = p.get("effect", "")
-        conf = p.get("confidence", "")
-        if cause and effect:
-            edges.append((_node_id(cause), _node_id(effect), conf))
-
-    lines = ["graph LR"]
-    for label, nid in node_ids.items():
-        # Escape quotes in labels
-        safe_label = label.replace('"', "'")
-        lines.append(f'    {nid}["{safe_label}"]')
-    for src, dst, conf in edges:
-        if conf == "high":
-            lines.append(f"    {src} ==> {dst}")
-        elif conf == "low":
-            lines.append(f"    {src} -.-> {dst}")
-        else:
-            lines.append(f"    {src} --> {dst}")
-
-    return "\n".join(lines)
-
-
-def format_full_output(result: dict) -> tuple[str, str, str]:
-    """
-    Format the full extraction result.
-
-    Returns:
-        Tuple of (pairs_table, chains_text, mermaid_code)
-    """
-    summary = result.get("summary", "")
-    pairs_md = format_causal_pairs_table(result)
-    chains_md = format_chains_diagram(result)
-    mermaid_code = format_mermaid_diagram(result)
-
-    # Build main output
-    main_output = ""
-    if summary:
-        main_output += f"### Summary\n{summary}\n\n"
-    main_output += f"### Causal Pairs\n{pairs_md}\n\n"
-    main_output += f"### Causal Chains\n{chains_md}"
-
-    return main_output, mermaid_code, json.dumps(result, ensure_ascii=False, indent=2)
+    return result, raw_response
