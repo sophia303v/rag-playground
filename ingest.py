@@ -2,15 +2,15 @@
 import sys
 sys.path.insert(0, ".")
 
-from src.rag_pipeline import MedicalImagingRAG
+from src.rag_pipeline import RAGPipeline
 
 
 def main():
     print("=" * 60)
-    print("Medical Imaging RAG - Data Ingestion")
+    print("RAG Playground - Data Ingestion")
     print("=" * 60)
 
-    rag = MedicalImagingRAG()
+    rag = RAGPipeline()
 
     if rag._is_ingested:
         print("\nIndex already exists. Delete data/chroma_db/ to re-index.")

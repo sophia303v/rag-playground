@@ -1,4 +1,4 @@
-"""Centralized configuration for Medical Imaging RAG."""
+"""Centralized configuration for RAG Playground."""
 import os
 import sys
 from datetime import datetime

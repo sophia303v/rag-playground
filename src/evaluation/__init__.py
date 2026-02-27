@@ -1,5 +1,5 @@
 """
-Evaluation module for Medical Imaging RAG.
+Evaluation module for RAG Playground.
 
 Provides RAGAS-style metrics, LLM-as-Judge scoring, and HTML visualization.
 """

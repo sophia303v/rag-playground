@@ -1,6 +1,6 @@
-# Medical Imaging Multimodal RAG — 內部技術文件
+# RAG Playground — 內部技術文件
 
-一個針對放射科報告的 Retrieval-Augmented Generation 系統。使用者可以用自然語言提問胸部 X 光相關問題，也可以上傳 X 光影像，系統會從知識庫中檢索相關報告，再由 LLM 生成有引用來源的回答。
+一個模組化的 Retrieval-Augmented Generation 框架。可切換 embedding 後端、檢索策略（dense / BM25 hybrid / cross-encoder reranking）、生成模型，並在多個 benchmark 資料集（SQuAD v2、SciFact、自訂 QA）上做評估比較。
 
 ---
 
@@ -126,7 +126,7 @@ System prompt 限制模型只能根據提供的參考文件回答、必須引用
 
 ### `src/rag_pipeline.py` — 管線整合
 
-`MedicalImagingRAG` class 兩個方法：
+`RAGPipeline` class 兩個方法：
 - `ingest()` — 載入資料 → chunk → 建索引
 - `query()` — 檢索 → 生成
 
@@ -343,7 +343,7 @@ python compare_experiments.py exp1/ exp2/ exp3/ -o experiments/my_comparison.htm
 ## 專案結構
 
 ```
-medical-imaging-rag/
+rag-playground/
 ├── app.py                    # Gradio web 介面
 ├── ingest.py                 # 資料索引 CLI
 ├── run_eval.py               # 評估 CLI

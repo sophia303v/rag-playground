@@ -1,5 +1,5 @@
 """
-Streamlit dashboard for Medical Imaging RAG.
+Streamlit dashboard for RAG Playground.
 
 Three tabs:
 1. Eval Dashboard — interactive charts and tables from eval_results.json
@@ -45,7 +45,7 @@ EXAMPLE_QUESTIONS = [
 # Page config
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Medical Imaging RAG",
+    page_title="RAG Playground",
     page_icon="\U0001fa7a",
     layout="wide",
 )
@@ -270,8 +270,8 @@ def render_eval_dashboard():
 # ---------------------------------------------------------------------------
 @st.cache_resource
 def get_rag_pipeline():
-    from src.rag_pipeline import MedicalImagingRAG
-    rag = MedicalImagingRAG()
+    from src.rag_pipeline import RAGPipeline
+    rag = RAGPipeline()
     if not rag._is_ingested:
         rag.ingest()
     return rag
@@ -544,7 +544,7 @@ def render_metric_guide():
 # Main
 # ---------------------------------------------------------------------------
 def main():
-    st.title("Medical Imaging RAG")
+    st.title("RAG Playground")
     st.caption("Interactive evaluation dashboard & live query interface")
 
     tab_eval, tab_query, tab_guide = st.tabs(["Eval Dashboard", "RAG Query", "Metric Guide"])

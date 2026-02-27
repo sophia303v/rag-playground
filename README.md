@@ -1,21 +1,23 @@
-# Medical Imaging Multimodal RAG
+# RAG Playground
 
-A Retrieval-Augmented Generation system for radiology reports. Ask questions about chest X-ray findings — optionally upload an image — and get AI-generated answers grounded in a knowledge base of radiology reports, with source citations.
+A modular Retrieval-Augmented Generation framework with pluggable components. Swap embedding backends, retrieval strategies (dense, BM25 hybrid, cross-encoder reranking), generation models, and evaluation metrics — then benchmark across datasets like SQuAD v2, SciFact, and custom QA sets.
 
 ## Features
 
 ### RAG Pipeline
-- **Multimodal retrieval** — text queries + optional chest X-ray image input (Gemini Vision converts images to text for search)
-- **Section-aware chunking** — splits radiology reports by natural boundaries (indication / findings / impression) instead of fixed token windows
-- **Dual embedding backend** — TF-IDF for offline development, Gemini `text-embedding-004` for production
+- **Multimodal retrieval** — text queries + optional image input (Gemini Vision converts images to text for search)
+- **Hybrid retrieval** — Dense (ChromaDB) + Sparse (BM25) with Reciprocal Rank Fusion, then cross-encoder reranking
+- **Triple embedding backend** — sentence-transformers (default), TF-IDF (offline), Gemini `text-embedding-004` (API)
 - **ChromaDB vector store** — persistent, embedded database with cosine similarity search
-- **Grounded generation** — Gemini 2.0 Flash generates answers with source citations and medical disclaimers
+- **Multi-LLM generation** — Gemini 2.0 Flash, Ollama (local), with automatic fallback chain
 - **Local fallback** — works without API key by returning raw retrieved documents
 
 ### Evaluation System
 - **6 retrieval metrics** — Context Precision, Context Recall, MRR (Mean Reciprocal Rank), nDCG (Normalized Discounted Cumulative Gain), Faithfulness, Answer Relevancy
-- **3-criteria LLM Judge** — Medical Appropriateness, Citation Accuracy, Answer Completeness
+- **Combined LLM evaluation** — 5 metrics in a single API call (faithfulness, relevancy, domain appropriateness, citation accuracy, completeness)
+- **Multi-backend eval** — Groq (fast, free) > OpenRouter > Gemini > Ollama fallback chain
 - **Multiple benchmark datasets** — custom medical QA (40 pairs), SQuAD v2 (2000 pairs), SciFact (300 queries)
+- **Checkpoint/resume** — saves progress per question, resumes from last checkpoint on interruption
 - **Experiment management** — YAML configs, auto-named experiment folders, config snapshots
 - **Interactive HTML report** — radar chart, grouped bar chart, metric descriptions, per-question detail table (Plotly)
 - **Cross-experiment comparison** — overlaid radar charts, delta tables, config diff
@@ -26,30 +28,37 @@ A Retrieval-Augmented Generation system for radiology reports. Ask questions abo
 
 ## Experiment Results
 
-All experiments use `all-MiniLM-L12-v2` (sentence-transformers) for embedding and ChromaDB for retrieval.
+All experiments use `all-MiniLM-L12-v2` (sentence-transformers) for embedding, ChromaDB for dense retrieval, and `cross-encoder/ms-marco-MiniLM-L-6-v2` for reranking.
 
-| Experiment | Dataset | K | Questions | Mode | Precision | Recall | MRR | nDCG | Faithfulness | Relevancy |
-|---|---|---|---|---|---|---|---|---|---|---|
-| baseline | openi_synthetic | 3 | 40 | Retrieval | 0.321 | 0.642 | — | — | — | — |
-| topk5 | openi_synthetic | 5 | 40 | Retrieval | 0.216 | 0.694 | — | — | — | — |
-| scifact_baseline | scifact | 3 | 300 | Retrieval | 0.223 | 0.614 | 0.550 | 0.559 | — | — |
-| scifact_topk1 | scifact | 1 | 300 | Retrieval | 0.483 | 0.460 | 0.483 | 0.483 | — | — |
-| squad_v2_baseline | squad_v2 | 3 | 2000 | Retrieval | 0.246 | 0.737 | 0.644 | 0.668 | — | — |
-| squad_v2_full_20 | squad_v2 | 3 | 20 | Full | 0.150 | 0.450 | 0.317 | 0.351 | 0.812 | 0.510 |
-| squad_v2_topk1 | squad_v2 | 1 | 2000 | Retrieval | 0.565 | 0.565 | 0.565 | 0.565 | — | — |
+### Retrieval Strategy Comparison (SQuAD v2, 200 questions)
+
+| Configuration | Recall | MRR | nDCG | Faithfulness | Relevancy | Completeness |
+|---|---|---|---|---|---|---|
+| Baseline (dense only) | 0.635 | 0.555 | 0.576 | 0.900 | 0.700 | 0.650 |
+| + Cross-encoder reranking | 0.810 | 0.779 | 0.787 | 0.875 | 0.875 | 0.750 |
+| + BM25 hybrid + RRF + reranking | **0.895** | **0.858** | **0.868** | — | — | — |
+
+### Earlier Experiments
+
+| Experiment | Dataset | K | Questions | Mode | Recall | MRR | nDCG |
+|---|---|---|---|---|---|---|---|
+| scifact_baseline | scifact | 3 | 300 | Retrieval | 0.614 | 0.550 | 0.559 |
+| squad_v2_baseline | squad_v2 | 3 | 2000 | Retrieval | 0.737 | 0.644 | 0.668 |
+| squad_v2_rerank | squad_v2 | 3 | 2000 | Retrieval | 0.893 | 0.849 | 0.861 |
+| squad_v2_bm25_hybrid | squad_v2 | 3 | 2000 | Retrieval | 0.941 | 0.894 | 0.906 |
 
 **Key observations:**
-- **Precision vs Recall trade-off**: K=1 gives higher precision but lower recall; K=3 retrieves more relevant docs but dilutes precision
-- **MRR ~0.6 on SQuAD**: the first relevant document is typically at rank 1-2
-- **Faithfulness 0.812**: generated answers are mostly grounded in retrieved context (not hallucinating)
-- **Relevancy 0.510**: moderate — SQuAD questions are general knowledge, not medical, so the medical system prompt adds noise
+- **BM25 hybrid + reranking** is the best retrieval strategy: +41% recall over dense-only baseline
+- **Cross-encoder reranking** alone gives a major boost (+27.6% recall), BM25 adds another +10.5%
+- **Faithfulness 0.875–0.900**: generated answers are well-grounded in retrieved context
+- **Answer completeness** improves with better retrieval (0.650 → 0.750)
 
 Each experiment generates an interactive HTML report in `experiments/{date}_{name}/eval_report.html`.
 
 ## Project Structure
 
 ```
-medical-imaging-rag/
+rag-playground/
 ├── app.py                    # Gradio web interface
 ├── ingest.py                 # CLI data ingestion script
 ├── run_eval.py               # CLI evaluation entry point
@@ -62,13 +71,15 @@ medical-imaging-rag/
 │   ├── chunking.py           # Section-based text chunking
 │   ├── embedding.py          # ST / TF-IDF / Gemini embedding backends
 │   ├── vector_store.py       # ChromaDB indexing & search
-│   ├── retriever.py          # Multimodal retrieval (text + image)
+│   ├── retriever.py          # Dense + BM25 hybrid retrieval with reranking
+│   ├── bm25_index.py         # BM25 sparse keyword index
 │   ├── generator.py          # Gemini / Ollama answer generation with citations
 │   ├── rag_pipeline.py       # Orchestrator (ingest + query)
 │   └── evaluation/
 │       ├── metrics.py        # Retrieval metrics + LLM-based metrics
 │       ├── llm_judge.py      # 3-criteria LLM judge
-│       ├── runner.py         # Evaluation orchestrator (batch embed + concurrent eval)
+│       ├── combined_eval.py  # 5-metric combined LLM eval (Groq/OpenRouter/Gemini/Ollama)
+│       ├── runner.py         # Evaluation orchestrator with checkpoint/resume
 │       └── visualization.py  # Plotly HTML report + cross-experiment comparison
 │
 ├── scripts/
@@ -163,21 +174,22 @@ Results are saved to `experiments/{date}_{name}/` with an interactive HTML repor
 ## How It Works
 
 ```
-User Question (+ optional X-ray)
+User Question (+ optional image)
         │
         ▼
-┌─ Retriever ──────────────────────┐
-│  1. Image → Gemini Vision desc.  │
-│  2. Query → embedding            │
-│  3. ChromaDB cosine search       │
-└──────────────────────────────────┘
-        │ top-5 relevant chunks
+┌─ Retriever ───────────────────────────┐
+│  1. Image → Vision desc. (optional)   │
+│  2. Query → embedding                 │
+│  3. Dense (ChromaDB) + BM25 (sparse)  │
+│  4. Reciprocal Rank Fusion            │
+│  5. Cross-encoder reranking           │
+└───────────────────────────────────────┘
+        │ top-k relevant chunks
         ▼
-┌─ Generator ──────────────────────┐
-│  Gemini 2.0 Flash                │
-│  + source citations              │
-│  + medical disclaimer            │
-└──────────────────────────────────┘
+┌─ Generator ───────────────────────────┐
+│  Gemini / Ollama (with fallback)      │
+│  + source citations                   │
+└───────────────────────────────────────┘
         │
         ▼
     Answer with references
@@ -193,13 +205,18 @@ User Question (+ optional X-ray)
 | nDCG | Retrieval | Ranking quality, weighted by position |
 | Faithfulness | Generation (LLM) | Is the answer grounded in retrieved context? |
 | Answer Relevancy | Generation (LLM) | Does the answer address the question? |
-| Medical Appropriateness | Judge (LLM) | Correct terminology, clinically accurate |
+| Domain Appropriateness | Judge (LLM) | Correct terminology, domain-appropriate |
 | Citation Accuracy | Judge (LLM) | Sources cited and match content |
 | Answer Completeness | Judge (LLM) | Covers key points from ground truth |
 
 ## Data
 
-The project uses 20 synthetic radiology reports (`data/sample_reports.json`) covering common chest X-ray findings: pneumonia, CHF, pneumothorax, COPD, lung masses, tuberculosis, ARDS, rib fractures, sarcoidosis, and more. For a larger dataset, the system can download the [Indiana University Chest X-ray (OpenI)](https://huggingface.co/datasets/ykumards/open-i) dataset from HuggingFace.
+The project supports multiple datasets out of the box:
+- **openi_synthetic** — 20 medical radiology reports + 40 QA pairs (custom)
+- **squad_v2** — 1204 passages + 2000 QA pairs (Wikipedia-based reading comprehension)
+- **scifact** — 5183 scientific abstracts + 300 claim queries (retrieval-only)
+
+Use `python scripts/download_datasets.py <name>` to download benchmark datasets.
 
 ## Tech Stack
 

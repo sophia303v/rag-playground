@@ -1,4 +1,4 @@
-# Medical Imaging Multimodal RAG — Architecture Guide
+# RAG Playground — Architecture Guide
 
 ## System Overview
 
@@ -166,7 +166,7 @@ Public API:
 ### `src/rag_pipeline.py` — Pipeline Orchestrator
 
 **What it does:**
-The `MedicalImagingRAG` class ties everything together:
+The `RAGPipeline` class ties everything together:
 - `__init__()` — checks if an index already exists in ChromaDB.
 - `ingest(max_samples)` — loads data → chunks → indexes (one-time setup).
 - `query(question, image)` — retrieves → generates (per-query).

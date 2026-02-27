@@ -13,7 +13,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 import config
-from src.rag_pipeline import MedicalImagingRAG
+from src.rag_pipeline import RAGPipeline
 from src.embedding import embed_texts
 from src.vector_store import get_chroma_client, get_or_create_collection
 from src.retriever import RetrievalResult, _get_cross_encoder, _rrf_merge
@@ -236,7 +236,7 @@ def run_evaluation(
         print(f"Loaded {len(qa_pairs)} QA pairs from {golden_qa_path}")
 
     # Initialize RAG pipeline
-    rag = MedicalImagingRAG()
+    rag = RAGPipeline()
     if not rag._is_ingested:
         if verbose:
             print("No index found. Running ingestion...")

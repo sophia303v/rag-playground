@@ -9,12 +9,12 @@ from src.generator import generate_answer, GenerationResult
 import config
 
 
-class MedicalImagingRAG:
+class RAGPipeline:
     """
-    Medical Imaging Multimodal RAG Pipeline.
+    Modular RAG Pipeline with pluggable components.
 
     Usage:
-        rag = MedicalImagingRAG()
+        rag = RAGPipeline()
         rag.ingest(max_samples=200)     # One-time: load data + build index
         result = rag.query("What are common findings in chest X-rays?")
         print(result.answer)

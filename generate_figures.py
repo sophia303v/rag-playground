@@ -135,7 +135,7 @@ def fig_query_pipeline():
 
     # Title
     _centered_text(d, 0, 20, W, "RAG Query Pipeline", FONTS["title"], TEXT)
-    _centered_text(d, 0, 65, W, "Medical Imaging Multimodal Retrieval-Augmented Generation",
+    _centered_text(d, 0, 65, W, "Modular Retrieval-Augmented Generation Framework",
                    FONTS["subtitle"], GRAY_T)
 
     # ── Section backgrounds ──

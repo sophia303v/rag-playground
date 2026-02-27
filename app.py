@@ -1,14 +1,14 @@
-"""Gradio UI for Medical Imaging Multimodal RAG."""
+"""Gradio UI for RAG Playground."""
 import sys
 sys.path.insert(0, ".")
 
 import gradio as gr
 from PIL import Image
-from src.rag_pipeline import MedicalImagingRAG
+from src.rag_pipeline import RAGPipeline
 
 # Initialize RAG pipeline
-print("Initializing Medical Imaging RAG...")
-rag = MedicalImagingRAG()
+print("Initializing RAG Playground...")
+rag = RAGPipeline()
 
 if not rag._is_ingested:
     print("No index found. Running ingestion...")
@@ -52,17 +52,17 @@ def query_rag(question: str, image: Image.Image | None = None) -> tuple[str, str
 
 # Build Gradio interface
 with gr.Blocks(
-    title="Medical Imaging RAG",
+    title="RAG Playground",
     theme=gr.themes.Soft(),
 ) as demo:
     gr.Markdown(
         """
-        # Medical Imaging Multimodal RAG
+        # RAG Playground
 
-        Ask questions about radiology findings. Optionally upload a chest X-ray
+        Ask questions over your document corpus. Optionally upload an image
         for multimodal analysis.
 
-        *This system retrieves relevant radiology reports and uses AI to generate
+        *This system retrieves relevant documents and uses AI to generate
         evidence-based answers with source citations.*
         """
     )
